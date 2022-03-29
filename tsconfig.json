@@ -41,12 +41,14 @@
     "paths": {
       "@assets": ["assets"],
       "@components": ["components"],
+      "@i18n": ["i18n"],
       "@screens": ["screens"],
       "@theme": ["theme"],
       "@utils": ["utils"],
 
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
+      "@i18n/*": ["i18n/*"],
       "@screens/*": ["screens/*"],
       "@theme/*": ["theme/*"],
       "@utils/*": ["utils/*"],
