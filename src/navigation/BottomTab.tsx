@@ -5,7 +5,7 @@ import {
 import React from 'react';
 import {bottomTabScreens} from './routes';
 import {BottomTabRoutes, ScreenOptions} from './types';
-import {CustomIcon, IconsMCI} from '@assets/icons';
+import {CustomIcon} from '@assets/icons';
 import {useTheme} from '@theme';
 const Tab = createBottomTabNavigator<BottomTabRoutes>();
 
@@ -28,8 +28,8 @@ const BottomTabNavigation = () => {
     MyOrders: {
       tabBarLabel: 'MyOrders',
       tabBarIcon: ({focused}) => (
-        <IconsMCI
-          name="cart"
+        <CustomIcon
+          name="list-bill-s"
           size={24}
           color={focused ? Colors.orange : Colors.black}
         />
@@ -39,7 +39,7 @@ const BottomTabNavigation = () => {
       tabBarLabel: 'Likes',
       tabBarIcon: ({focused}) => (
         <CustomIcon
-          name="heart1"
+          name="heart"
           size={24}
           color={focused ? Colors.orange : Colors.black}
         />
