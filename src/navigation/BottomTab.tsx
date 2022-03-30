@@ -39,7 +39,7 @@ const BottomTabNavigation = () => {
       tabBarLabel: 'Likes',
       tabBarIcon: ({focused}) => (
         <CustomIcon
-          name="heart-o"
+          name="heart1"
           size={24}
           color={focused ? Colors.orange : Colors.black}
         />
