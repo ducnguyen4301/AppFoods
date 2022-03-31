@@ -19,7 +19,7 @@ const BottomTabNavigation = () => {
       tabBarLabel: 'Home',
       tabBarIcon: ({focused}) => (
         <CustomIcon
-          name="home"
+          name={focused ? 'home' : 'home-n'}
           size={24}
           color={focused ? Colors.orange : Colors.black}
         />
@@ -29,7 +29,7 @@ const BottomTabNavigation = () => {
       tabBarLabel: 'MyOrders',
       tabBarIcon: ({focused}) => (
         <CustomIcon
-          name="list-bill-s"
+          name={focused ? 'receipt' : 'receipt-o'}
           size={24}
           color={focused ? Colors.orange : Colors.black}
         />
@@ -39,7 +39,7 @@ const BottomTabNavigation = () => {
       tabBarLabel: 'Likes',
       tabBarIcon: ({focused}) => (
         <CustomIcon
-          name="heart"
+          name={focused ? 'heart' : 'heart-o'}
           size={24}
           color={focused ? Colors.orange : Colors.black}
         />
@@ -49,7 +49,7 @@ const BottomTabNavigation = () => {
       tabBarLabel: 'Notifications',
       tabBarIcon: ({focused}) => (
         <CustomIcon
-          name="bell"
+          name={focused ? 'bell' : 'bell-o'}
           size={24}
           color={focused ? Colors.orange : Colors.black}
         />
@@ -59,7 +59,7 @@ const BottomTabNavigation = () => {
       tabBarLabel: 'Me',
       tabBarIcon: ({focused}) => (
         <CustomIcon
-          name={focused ? 'user-o' : 'bell'}
+          name={focused ? 'user' : 'user-o'}
           size={24}
           color={focused ? Colors.orange : Colors.black}
         />
