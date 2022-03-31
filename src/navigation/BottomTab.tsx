@@ -59,7 +59,7 @@ const BottomTabNavigation = () => {
       tabBarLabel: 'Me',
       tabBarIcon: ({focused}) => (
         <CustomIcon
-          name="user-o"
+          name={focused ? 'user-o' : 'bell'}
           size={24}
           color={focused ? Colors.orange : Colors.black}
         />
@@ -72,6 +72,8 @@ const BottomTabNavigation = () => {
       screenOptions={{
         tabBarAllowFontScaling: false,
         headerShown: false,
+        tabBarActiveTintColor: Colors.orange,
+        tabBarInactiveTintColor: Colors.black,
       }}>
       {bottomTabScreens.map(({name, component}: any) => (
         <Tab.Screen

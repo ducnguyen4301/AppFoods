@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* AppFoodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AppFoodsTests.m */; };
+		070561A227F54D1800271631 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 070561A127F54D1800271631 /* icomoon.ttf */; };
 		0740804027F455990073CEBE /* Bozon_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0740803927F455980073CEBE /* Bozon_Bold.otf */; };
 		0740804127F455990073CEBE /* BR_Firma_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0740803A27F455990073CEBE /* BR_Firma_Regular.otf */; };
 		0740804227F455990073CEBE /* Bozon_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0740803B27F455990073CEBE /* Bozon_Regular.otf */; };
 		0740804327F455990073CEBE /* Bozon_Demi_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0740803C27F455990073CEBE /* Bozon_Demi_Bold.otf */; };
 		0740804427F455990073CEBE /* BR_Firma_Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0740803D27F455990073CEBE /* BR_Firma_Medium.otf */; };
 		0740804627F455990073CEBE /* BR_Firma_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0740803F27F455990073CEBE /* BR_Firma_Bold.otf */; };
-		0740806A27F45BC00073CEBE /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0740806927F45BC00073CEBE /* icomoon.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -37,13 +37,13 @@
 		00E356EE1AD99517003FC87E /* AppFoodsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppFoodsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* AppFoodsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppFoodsTests.m; sourceTree = "<group>"; };
+		070561A127F54D1800271631 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		0740803927F455980073CEBE /* Bozon_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bozon_Bold.otf; sourceTree = "<group>"; };
 		0740803A27F455990073CEBE /* BR_Firma_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BR_Firma_Regular.otf; sourceTree = "<group>"; };
 		0740803B27F455990073CEBE /* Bozon_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bozon_Regular.otf; sourceTree = "<group>"; };
 		0740803C27F455990073CEBE /* Bozon_Demi_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bozon_Demi_Bold.otf; sourceTree = "<group>"; };
 		0740803D27F455990073CEBE /* BR_Firma_Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BR_Firma_Medium.otf; sourceTree = "<group>"; };
 		0740803F27F455990073CEBE /* BR_Firma_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BR_Firma_Bold.otf; sourceTree = "<group>"; };
-		0740806927F45BC00073CEBE /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* AppFoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AppFoods/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = AppFoods/AppDelegate.m; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		0740803827F455590073CEBE /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
-				0740806927F45BC00073CEBE /* icomoon.ttf */,
+				070561A127F54D1800271631 /* icomoon.ttf */,
 				0740803927F455980073CEBE /* Bozon_Bold.otf */,
 				0740803C27F455990073CEBE /* Bozon_Demi_Bold.otf */,
 				0740803B27F455990073CEBE /* Bozon_Regular.otf */,
@@ -271,10 +271,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0740806A27F45BC00073CEBE /* icomoon.ttf in Resources */,
 				0740804227F455990073CEBE /* Bozon_Regular.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				0740804427F455990073CEBE /* BR_Firma_Medium.otf in Resources */,
+				070561A227F54D1800271631 /* icomoon.ttf in Resources */,
 				0740804027F455990073CEBE /* Bozon_Bold.otf in Resources */,
 				0740804127F455990073CEBE /* BR_Firma_Regular.otf in Resources */,
 				0740804627F455990073CEBE /* BR_Firma_Bold.otf in Resources */,
