@@ -9,17 +9,14 @@ export type RootStackRoutes = {
 };
 
 export type BottomTabRoutes = {
-  HomeScreen: undefined;
-  Settings: undefined;
+  Home: undefined;
+  Orders: undefined;
+  Likes: undefined;
   Notification: undefined;
-  Profile: undefined;
+  Me: undefined;
 };
 
 export type RouteNames = keyof RootStackRoutes;
-
-export type DevStackRoutes = {
-  DevMenu: undefined;
-};
 
 export type ScreenOptions<T extends ParamListBase, K extends {}> = {
   [screenName: string]: RouteConfig<T, keyof T, any, K, any>['options'];
