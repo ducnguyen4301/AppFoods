@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-
+import {Colors} from '@theme/color';
 export default StyleSheet.create({
-  inputStyle: {borderBottomColor: '#FFFF'},
+  inputStyle: {borderBottomColor: Colors.white},
 });
