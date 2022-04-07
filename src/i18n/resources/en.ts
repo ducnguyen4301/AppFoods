@@ -1,8 +1,20 @@
 export default {
-  Home: {},
+  Home: {
+    home: 'a',
+  },
+  MyOrders: {
+    orders: 'MyOrders',
+  },
+  Likes: {
+    like: 'Likes',
+  },
   Search: {
     search: 'Search',
-    readMore: 'Read more on {{category}}',
   },
-  Notification: {},
+  Notification: {
+    notify: 'Notification',
+  },
+  Me: {
+    me: 'Me',
+  },
 };
