@@ -29,7 +29,7 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
         control={control}
         name="username"
         placeholder="Tên đăng nhập hoặc email"
-        placeholderTextColor={Colors.white70}
+        placeholderTextColor={Colors.orange}
         inputStyle={styles.inputStyle}
         error
         errorStyle={styles.error}
@@ -39,7 +39,7 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
         control={control}
         name="password"
         placeholder="Mật khẩu"
-        placeholderTextColor={Colors.white}
+        placeholderTextColor={Colors.orange}
         inputStyle={styles.inputStyle}
         onSubmitEditing={handleSubmit(onSubmit as any)}
       />
@@ -47,14 +47,14 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={() => navigate('ForgotPass')}>
-          <Text color="white">Quên mật khẩu?</Text>
+          <Text color="orange">Quên mật khẩu?</Text>
         </TouchableOpacity>
       </Block>
       <Block height={34} />
       <Button
         title="Đăng nhập"
         onPress={handleSubmit(onSubmit as any)}
-        backgroundColor="white"
+        backgroundColor="orange"
         disabled={!isValid}
       />
     </Block>

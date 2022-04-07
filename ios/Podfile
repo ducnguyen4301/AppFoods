@@ -16,7 +16,7 @@ target 'AppFoods' do
     inherit! :complete
     # Pods for testing
   end
-
+  pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and

@@ -23,18 +23,18 @@ const LoginScreen = () => {
     <ImageBackground source={localImages().logo} style={styles.container}>
       <Block flexGrow style={{paddingTop: top}}>
         <Block margin={{top: 84}}>
-          <CustomIcon name="logo" size={getSize.s(91)} color={Colors.white} />
-          <Text margin={{vertical: 50}} size={28} color="white">
+          <CustomIcon name="home" size={getSize.s(91)} color={Colors.orange} />
+          <Text margin={{vertical: 50}} size={28} color="orange">
             Đăng nhập
           </Text>
         </Block>
         <LoginForm onSubmit={_loginAccount} />
         <Block align="center" row margin={{top: 50}} justify="center">
-          <Text color="white">Bạn chưa có tài khoản? </Text>
+          <Text color="orange">Bạn chưa có tài khoản? </Text>
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigate('RegisterScreen')}>
-            <Text color="white" fontType="bold" style={styles.registerText}>
+            onPress={() => navigation.navigate('RegisterScreen')}>
+            <Text color="orange" fontType="bold" style={styles.registerText}>
               Đăng ký
             </Text>
           </TouchableOpacity>
@@ -43,7 +43,11 @@ const LoginScreen = () => {
       <TouchableOpacity
         style={[styles.closeBtn, {top}]}
         onPress={() => navigation.goBack()}>
-        <CustomIcon name="close" color={Colors.white} size={getSize.s(16)} />
+        <CustomIcon
+          name="chevron-left"
+          color={Colors.orange}
+          size={getSize.s(20)}
+        />
       </TouchableOpacity>
     </ImageBackground>
   );
