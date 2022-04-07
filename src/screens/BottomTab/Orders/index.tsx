@@ -3,7 +3,7 @@ import React from 'react';
 import '@i18n';
 import {useTranslation} from 'react-i18next';
 const MyOrders = () => {
-  const {t} = useTranslation();
+  const {t} = useTranslation('MyOrders');
   return (
     <SafeAreaView>
       <Text>{t('orders')}</Text>

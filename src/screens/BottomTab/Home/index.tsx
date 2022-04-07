@@ -4,7 +4,7 @@ import '@i18n';
 import {useTranslation} from 'react-i18next';
 
 const Home = () => {
-  const {t} = useTranslation();
+  const {t} = useTranslation('Home');
   return (
     <SafeAreaView>
       <Text>{t('home')}</Text>

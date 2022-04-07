@@ -3,7 +3,7 @@ import React from 'react';
 import '@i18n';
 import {useTranslation} from 'react-i18next';
 const Likes = () => {
-  const {t} = useTranslation();
+  const {t} = useTranslation('Likes');
   return (
     <SafeAreaView>
       <Text>{t('like')}</Text>
