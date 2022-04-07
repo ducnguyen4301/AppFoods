@@ -1,5 +1,7 @@
+import {IconType} from '@assets/icons';
 import {FlexStyle, ViewStyle} from 'react-native';
 import {EdgeInsets} from 'react-native-safe-area-context';
+import {IconProps} from 'react-native-vector-icons/Icon';
 import {BlockProps} from './Block/types';
 
 export const handleGutter = (
@@ -144,6 +146,16 @@ export const isString = (x: any): x is string => typeof x === 'string';
 export const isNumber = (x: any): x is number => typeof x === 'number';
 
 export const isUndefined = (x: any): x is undefined => x === undefined;
+
+export const isIcon = (
+  icon: IconComponentProps | React.ReactNode,
+): icon is IconComponentProps => {
+  return (icon as IconComponentProps)?.name !== undefined;
+};
+
+export interface IconComponentProps extends IconProps {
+  type: IconType;
+}
 
 export interface DefaultStyleProps {
   /**
