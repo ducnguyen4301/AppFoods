@@ -1,8 +1,7 @@
 import {Block, Button, FormInput, Text} from '@components';
-import TextInput from '@components/TextInput';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {useNavigation} from '@react-navigation/native';
 import {useTheme} from '@theme';
+import {navigate} from 'navigation/NavigationServices';
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import {TouchableOpacity} from 'react-native';
@@ -14,7 +13,6 @@ type LoginFormProps = {
 };
 
 const LoginForm = ({onSubmit}: LoginFormProps) => {
-  const navigation = useNavigation();
   const {Colors} = useTheme();
   const {
     control,
@@ -33,17 +31,9 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
         placeholder="Tên đăng nhập hoặc email"
         placeholderTextColor={Colors.white70}
         inputStyle={styles.inputStyle}
+        error
+        errorStyle={styles.error}
       />
-      <FormInput
-        control={control}
-        name="username"
-        placeholder="Tên đăng nhập hoặc email"
-        placeholderTextColor={Colors.white70}
-        inputStyle={styles.inputStyle}>
-        <TextInput showError error>
-          aaaa
-        </TextInput>
-      </FormInput>
       <Block height={25} />
       <FormInput
         control={control}
@@ -51,17 +41,22 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
         placeholder="Mật khẩu"
         placeholderTextColor={Colors.white}
         inputStyle={styles.inputStyle}
-        onSubmitEditing={handleSubmit(onSubmit)}
+        onSubmitEditing={handleSubmit(onSubmit as any)}
       />
       <Block margin={{top: 16}} alignSelf="flex-end">
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => navigation.navigate()}>
+          onPress={() => navigate('ForgotPass')}>
           <Text color="white">Quên mật khẩu?</Text>
         </TouchableOpacity>
       </Block>
       <Block height={34} />
-      <Button />
+      <Button
+        title="Đăng nhập"
+        onPress={handleSubmit(onSubmit as any)}
+        backgroundColor="white"
+        disabled={!isValid}
+      />
     </Block>
   );
 };

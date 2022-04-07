@@ -5,7 +5,7 @@ import {
 } from '@react-navigation/stack';
 import {useTheme} from '@theme';
 import React from 'react';
-import {commonModalSlides, commonScreens} from './routes';
+import {commonModalSlides, commonScreens, userModalSlides} from './routes';
 import {RootStackRoutes, ScreenOptions} from './types';
 
 const RootStack = createStackNavigator<RootStackRoutes>();
@@ -50,6 +50,18 @@ const RootStackNavigation = () => {
         })}>
         {Object.entries({
           ...commonModalSlides,
+        }).map(([name, component]: any) => (
+          <RootStack.Screen
+            key={name}
+            name={name}
+            component={component}
+            options={screenOptions[name]}
+          />
+        ))}
+      </RootStack.Group>
+      <RootStack.Group screenOptions={defaultOptions}>
+        {Object.entries({
+          ...userModalSlides,
         }).map(([name, component]: any) => (
           <RootStack.Screen
             key={name}

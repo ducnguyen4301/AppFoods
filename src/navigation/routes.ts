@@ -1,4 +1,4 @@
-import {BottomTab} from '@screens';
+import {Auth, BottomTab} from '@screens';
 import BottomTabNavigation from './BottomTab';
 
 /**
@@ -34,4 +34,5 @@ export const bottomTabScreens = [
   {component: BottomTab.Likes, name: 'Likes'},
   {component: BottomTab.Notify, name: 'Notifications'},
   {component: BottomTab.Me, name: 'Me'},
+  {component: Auth.LoginScreen, name: 'LoginScreen'},
 ];

@@ -7,14 +7,18 @@ import React from 'react';
 import {ImageBackground, TouchableOpacity} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {navigate} from 'navigation/NavigationServices';
-//import {LoginForm} from '@components/Auth';
+import {LoginForm} from '@components/Auth';
+//import {useDispatch} from 'react-redux';
 import styles from './styles';
 import localImages from '@assets';
 const LoginScreen = () => {
   const navigation = useNavigation();
   const {top} = useSafeAreaInsets();
   const {Colors} = useTheme();
-
+  //const dispatch = useDispatch();
+  const _loginAccount = (values: {username: string; password: string}) => {
+    console.log(values);
+  };
   return (
     <ImageBackground source={localImages().logo} style={styles.container}>
       <Block flexGrow style={{paddingTop: top}}>
@@ -24,7 +28,7 @@ const LoginScreen = () => {
             Đăng nhập
           </Text>
         </Block>
-        {/* <LoginForm onSubmit={_loginAccount} /> */}
+        <LoginForm onSubmit={_loginAccount} />
         <Block align="center" row margin={{top: 50}} justify="center">
           <Text color="white">Bạn chưa có tài khoản? </Text>
           <TouchableOpacity
