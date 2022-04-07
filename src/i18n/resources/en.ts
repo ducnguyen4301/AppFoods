@@ -1,6 +1,6 @@
 export default {
   Home: {
-    home: 'a',
+    home: 'Home',
   },
   MyOrders: {
     orders: 'MyOrders',
