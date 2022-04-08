@@ -6,7 +6,6 @@ import {getSize} from '@utils/reponsive';
 import React from 'react';
 import {ImageBackground, TouchableOpacity} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {navigate} from 'navigation/NavigationServices';
 import {LoginForm} from '@components/Auth';
 //import {useDispatch} from 'react-redux';
 import styles from './styles';
@@ -33,7 +32,7 @@ const LoginScreen = () => {
           <Text color="orange">Bạn chưa có tài khoản? </Text>
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('RegisterScreen')}>
+            onPress={() => navigation.navigate('RegisterScreen' as never)}>
             <Text color="orange" fontType="bold" style={styles.registerText}>
               Đăng ký
             </Text>
