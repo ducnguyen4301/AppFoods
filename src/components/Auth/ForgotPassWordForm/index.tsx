@@ -27,17 +27,14 @@ const RecoveryForm = ({onSubmit}: RecoveryFormProps) => {
         control={control}
         name="email"
         placeholder="Nhập địa chỉ email"
-        errorColor={Colors.white}
         placeholderTextColor={Colors.white70}
         inputStyle={styles.inputStyle}
-        color="white"
       />
       <Block height={34} />
       <Button
         title="Gửi yêu cầu"
-        onPress={handleSubmit(onSubmit)}
+        onPress={handleSubmit(onSubmit as any)}
         backgroundColor="white"
-        color="primary"
         disabled={!isValid}
       />
     </Block>
