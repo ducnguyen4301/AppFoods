@@ -14,6 +14,7 @@ type LoginFormProps = {
 
 const LoginForm = ({onSubmit}: LoginFormProps) => {
   const {Colors} = useTheme();
+
   const {
     control,
     handleSubmit,
@@ -41,19 +42,23 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
         placeholder="Mật khẩu"
         placeholderTextColor={Colors.orange}
         inputStyle={styles.inputStyle}
-        onSubmitEditing={handleSubmit(onSubmit as any)}
+        secureTextEntry
+        onSubmitEditing={handleSubmit(() =>
+          onSubmit({
+            password: '',
+            username: '',
+          }),
+        )}
       />
       <Block margin={{top: 16}} alignSelf="flex-end">
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigate('ForgotPass')}>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => navigate('Home')}>
           <Text color="orange">Quên mật khẩu?</Text>
         </TouchableOpacity>
       </Block>
       <Block height={34} />
       <Button
         title="Đăng nhập"
-        onPress={handleSubmit(onSubmit as any)}
+        onPress={handleSubmit(() => onSubmit({username: '', password: ''}))}
         backgroundColor="orange"
         disabled={!isValid}
       />

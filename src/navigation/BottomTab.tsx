@@ -75,6 +75,16 @@ const BottomTabNavigation = () => {
         />
       ),
     },
+    RegisterScreen: {
+      tabBarLabel: 'RegisterScreen',
+      tabBarIcon: ({focused}) => (
+        <CustomIcon
+          name={focused ? 'user' : 'user-o'}
+          size={24}
+          color={focused ? Colors.orange : Colors.black}
+        />
+      ),
+    },
   };
 
   return (

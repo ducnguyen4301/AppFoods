@@ -1,29 +1,33 @@
 import {CustomIcon} from '@assets/icons';
 import {Block, Text} from '@components';
-import {useNavigation} from '@react-navigation/native';
+import {navigate} from 'navigation/NavigationServices';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
 import React from 'react';
-import {ImageBackground, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {LoginForm} from '@components/Auth';
 //import {useDispatch} from 'react-redux';
 import styles from './styles';
-import localImages from '@assets';
+import {useNavigation} from '@react-navigation/native';
 const LoginScreen = () => {
-  const navigation = useNavigation();
   const {top} = useSafeAreaInsets();
+  const navigation = useNavigation();
   const {Colors} = useTheme();
   //const dispatch = useDispatch();
   const _loginAccount = (values: {username: string; password: string}) => {
     console.log(values);
   };
   return (
-    <ImageBackground source={localImages().logo} style={styles.container}>
+    <Block style={styles.container}>
       <Block flexGrow style={{paddingTop: top}}>
         <Block margin={{top: 84}}>
-          <CustomIcon name="home" size={getSize.s(91)} color={Colors.orange} />
-          <Text margin={{vertical: 50}} size={28} color="orange">
+          <CustomIcon
+            name="heart-o"
+            size={getSize.s(91)}
+            color={Colors.orange}
+          />
+          <Text margin={{vertical: 50}} size={28} color="orange" center>
             Đăng nhập
           </Text>
         </Block>
@@ -32,7 +36,7 @@ const LoginScreen = () => {
           <Text color="orange">Bạn chưa có tài khoản? </Text>
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => navigation.navigate('RegisterScreen' as never)}>
+            onPress={() => navigate('RegisterScreen')}>
             <Text color="orange" fontType="bold" style={styles.registerText}>
               Đăng ký
             </Text>
@@ -48,7 +52,7 @@ const LoginScreen = () => {
           size={getSize.s(20)}
         />
       </TouchableOpacity>
-    </ImageBackground>
+    </Block>
   );
 };
 

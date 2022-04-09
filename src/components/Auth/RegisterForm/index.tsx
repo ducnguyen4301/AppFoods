@@ -35,7 +35,7 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
         control={control}
         name="fullName"
         placeholder="Họ và tên"
-        placeholderTextColor={Colors.white70}
+        placeholderTextColor={Colors.orange}
         inputStyle={styles.inputStyle}
         errorStyle={styles.errorStyle}
       />
@@ -44,7 +44,7 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
         control={control}
         name="email"
         placeholder="Email"
-        placeholderTextColor={Colors.white70}
+        placeholderTextColor={Colors.orange}
         inputStyle={styles.inputStyle}
         errorStyle={styles.errorStyle}
       />
@@ -53,7 +53,7 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
         control={control}
         name="username"
         placeholder="Tên đăng nhập"
-        placeholderTextColor={Colors.white70}
+        placeholderTextColor={Colors.orange}
         inputStyle={styles.inputStyle}
         errorStyle={styles.errorStyle}
       />
@@ -62,16 +62,17 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
         control={control}
         name="password"
         placeholder="Mật khẩu"
-        placeholderTextColor={Colors.white70}
+        placeholderTextColor={Colors.orange}
         inputStyle={styles.inputStyle}
         errorStyle={styles.errorStyle}
+        secureTextEntry
       />
       <Block height={25} />
       <FormInput
         control={control}
         name="confirmPassword"
         placeholder="Nhập lại mật khẩu"
-        placeholderTextColor={Colors.white70}
+        placeholderTextColor={Colors.orange}
         inputStyle={styles.inputStyle}
         error
         errorStyle={styles.errorStyle}
@@ -79,8 +80,16 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
       <Block height={34} />
       <Button
         title="Đăng ký"
-        onPress={handleSubmit(onSubmit as any)}
-        backgroundColor="white"
+        onPress={handleSubmit(() =>
+          onSubmit({
+            fullName: '',
+            email: '',
+            username: '',
+            password: '',
+            confirmPassword: '',
+          }),
+        )}
+        backgroundColor="orange"
         disabled={!isValid}
       />
     </Block>
