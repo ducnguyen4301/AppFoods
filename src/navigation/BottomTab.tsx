@@ -75,8 +75,8 @@ const BottomTabNavigation = () => {
         />
       ),
     },
-    RegisterScreen: {
-      tabBarLabel: 'RegisterScreen',
+    OTPScreen: {
+      tabBarLabel: 'OTP',
       tabBarIcon: ({focused}) => (
         <CustomIcon
           name={focused ? 'user' : 'user-o'}

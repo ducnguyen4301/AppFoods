@@ -20,6 +20,7 @@ export const notLoggedInScreens = [
   {component: Auth.LoginScreen, name: 'Login'},
   {component: Auth.RegisterScreen, name: 'Register'},
   {component: Auth.ForgotPassScreen, name: 'Forgotpass'},
+  {component: Auth.OTPScreen, name: 'OTP'},
 ];
 
 /**
@@ -40,4 +41,5 @@ export const bottomTabScreens = [
   {component: BottomTab.Me, name: 'Me'},
   {component: Auth.LoginScreen, name: 'LoginScreen'},
   {component: Auth.RegisterScreen, name: 'RegisterScreen'},
+  {component: Auth.OTPScreen, name: 'OTP'},
 ];
