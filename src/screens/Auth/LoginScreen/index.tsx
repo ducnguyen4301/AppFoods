@@ -21,15 +21,12 @@ const LoginScreen = () => {
   return (
     <Block style={styles.container}>
       <Block flexGrow style={{paddingTop: top}}>
-        <Block margin={{top: 84}}>
+        <Block margin={{vertical: 26, top: 84}} align="center">
           <CustomIcon
             name="heart-o"
-            size={getSize.s(91)}
+            size={getSize.s(35)}
             color={Colors.orange}
           />
-          <Text margin={{vertical: 50}} size={28} color="orange" center>
-            Đăng nhập
-          </Text>
         </Block>
         <LoginForm onSubmit={_loginAccount} />
         <Block align="center" row margin={{top: 50}} justify="center">

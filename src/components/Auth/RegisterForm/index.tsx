@@ -35,7 +35,7 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
         control={control}
         name="fullName"
         placeholder="Họ và tên"
-        placeholderTextColor={Colors.orange}
+        placeholderTextColor={Colors.secondaryText}
         inputStyle={styles.inputStyle}
         errorStyle={styles.errorStyle}
       />
@@ -44,7 +44,7 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
         control={control}
         name="email"
         placeholder="Email"
-        placeholderTextColor={Colors.orange}
+        placeholderTextColor={Colors.secondaryText}
         inputStyle={styles.inputStyle}
         errorStyle={styles.errorStyle}
       />
@@ -53,7 +53,7 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
         control={control}
         name="username"
         placeholder="Tên đăng nhập"
-        placeholderTextColor={Colors.orange}
+        placeholderTextColor={Colors.secondaryText}
         inputStyle={styles.inputStyle}
         errorStyle={styles.errorStyle}
       />
@@ -62,7 +62,7 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
         control={control}
         name="password"
         placeholder="Mật khẩu"
-        placeholderTextColor={Colors.orange}
+        placeholderTextColor={Colors.secondaryText}
         inputStyle={styles.inputStyle}
         errorStyle={styles.errorStyle}
         secureTextEntry
@@ -72,7 +72,7 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
         control={control}
         name="confirmPassword"
         placeholder="Nhập lại mật khẩu"
-        placeholderTextColor={Colors.orange}
+        placeholderTextColor={Colors.secondaryText}
         inputStyle={styles.inputStyle}
         error
         errorStyle={styles.errorStyle}

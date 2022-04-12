@@ -1,5 +1,5 @@
 import {CustomIcon} from '@assets/icons';
-import {Block, FormContainer, Text} from '@components';
+import {Block, FormContainer} from '@components';
 import {useNavigation} from '@react-navigation/native';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
@@ -34,15 +34,12 @@ const RegisterScreen = () => {
     <Block style={styles.container}>
       <FormContainer>
         <Block flexGrow style={{paddingTop: top}}>
-          <Block margin={{top: 60}} align="center">
+          <Block margin={{vertical: 26, top: 84}} align="center">
             <CustomIcon
               name="user"
-              size={getSize.s(91)}
+              size={getSize.s(35)}
               color={Colors.orange}
             />
-            <Text margin={{vertical: 26}} size={28} color="orange">
-              Đăng ký
-            </Text>
           </Block>
           <RegisterForm onSubmit={_signUpAccount} />
         </Block>

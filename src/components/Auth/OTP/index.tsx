@@ -15,6 +15,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 const inputs = Array(6).fill('');
 const arrOTP = Array(6).fill('');
 let newInputdex = 0;
+
 const OTPS = () => {
   const inputRef = useRef<any>(null);
   const {t} = useTranslation();
@@ -32,12 +33,20 @@ const OTPS = () => {
     }
     setNextInputdex(newInputdex);
   };
+  //console.log(newInputdex);
+
   useEffect(() => {
     inputRef.current?.focus();
   }, [nextInputdex]);
 
   const submitOTP = () => {
     Keyboard.dismiss();
+    if (typeof OTP === 'object') {
+      let values = '';
+      Object.values(OTP).forEach(v => {
+        values = values + v;
+      });
+    }
   };
   return (
     <SafeAreaView>

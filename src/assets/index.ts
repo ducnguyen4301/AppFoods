@@ -1,6 +1,6 @@
 function localImages() {
   return {
-    logo: require('./images/goodFood.jpg'),
+    logo: require('./images/logo.png'),
   };
 }
 export default localImages;
