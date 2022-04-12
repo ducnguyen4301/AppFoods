@@ -1,6 +1,5 @@
 import {Colors} from '@theme/color';
-import {StyleSheet} from 'react-native';
-import {Dimensions} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 const {width} = Dimensions.get('screen');
 const inputWidth = Math.round(width / 8);
 export default StyleSheet.create({

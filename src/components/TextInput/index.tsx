@@ -181,7 +181,7 @@ const TextInput = forwardRef<any, InputProps>((props, ref) => {
 
   const _renderHint = () => {
     return (
-      <Text margin={{left: 4}} color="placeholder">
+      <Text margin={{left: 4}} color="red">
         {`${value.length}/${maxLength}`}
       </Text>
     );

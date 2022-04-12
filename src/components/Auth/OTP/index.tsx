@@ -7,7 +7,7 @@ import {
 import React, {useEffect, useRef, useState} from 'react';
 import Block from '@components/Block';
 import Text from '@components/Text';
-import TextInput from '@components/TextInput';
+import TextInputOTP from '@components/TextInputOTP';
 import {useTranslation} from 'react-i18next';
 import styles from './styles';
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -16,7 +16,7 @@ const inputs = Array(6).fill('');
 const arrOTP = Array(6).fill('');
 let newInputdex = 0;
 const OTPS = () => {
-  const input = useRef();
+  const inputRef = useRef<any>(null);
   const {t} = useTranslation();
   const [OTP, setOTP] = useState(arrOTP);
   const [nextInputdex, setNextInputdex] = useState(0);
@@ -24,15 +24,17 @@ const OTPS = () => {
     const newOTP = {...OTP};
     newOTP[_index] = text;
     setOTP(newOTP);
-    const lastInputdex = inputs.length - 1;
+    const isLastInput = inputs.length - 1;
     if (!text) {
       newInputdex = _index === 0 ? 0 : _index - 1;
     } else {
-      newInputdex = _index === lastInputdex ? lastInputdex : _index + 1;
+      newInputdex = _index === isLastInput ? isLastInput : _index + 1;
     }
     setNextInputdex(newInputdex);
   };
-  useEffect(() => {}, [nextInputdex]);
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, [nextInputdex]);
 
   const submitOTP = () => {
     Keyboard.dismiss();
@@ -49,17 +51,17 @@ const OTPS = () => {
           <Text style={styles.txtPhone}>0333333333</Text>
         </Block>
         <Block style={styles.otpContainer}>
-          {inputs.map((_inp, _index) => {
+          {inputs.map((_value, _index) => {
             return (
               <Block key={_index.toString()} style={styles.inputContainer}>
-                <TextInput
+                <TextInputOTP
                   value={OTP[_index]}
                   onChangeText={text => handleChangeText(text, _index)}
                   style={styles.input}
                   placeholder="0"
                   keyboardType="numeric"
                   maxLength={1}
-                  ref={nextInputdex === _index ? input : null}
+                  ref={nextInputdex === _index ? inputRef : null}
                 />
               </Block>
             );

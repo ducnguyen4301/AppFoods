@@ -17,7 +17,12 @@
         android:label="@string/app_name"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
         android:launchMode="singleTask"
-        android:windowSoftInputMode="adjustResize">
+        android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+        <!-- config -->
+        <!-- hide tab bar when keyboard appear -->
+        <!-- android:windowSoftInputMode="stateAlwaysHidden|adjustPan" -->
+        <!-- end config -->
+        <!-- deafult android:windowSoftInputMode="adjustResize" -->
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
