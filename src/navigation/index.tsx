@@ -1,7 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {useTheme} from '@theme';
 import React from 'react';
-// import {StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {navigationRef} from './NavigationServices';
 import RootStackNavigation from './RootStackNavigation';
 
@@ -10,7 +10,7 @@ const MainNavigation = () => {
 
   return (
     <NavigationContainer ref={navigationRef} theme={NavigationTheme}>
-      {/* <StatusBar barStyle="dark-content" /> */}
+      <StatusBar barStyle="dark-content" />
       <RootStackNavigation />
     </NavigationContainer>
   );
