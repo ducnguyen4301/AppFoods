@@ -3,16 +3,25 @@ import {
   StackNavigationOptions,
   TransitionPresets,
 } from '@react-navigation/stack';
+import {getIsAuth} from '@store/selectors';
 import {useTheme} from '@theme';
 import React from 'react';
-import {commonModalSlides, commonScreens, userModalSlides} from './routes';
+import {useSelector} from 'react-redux';
+import {
+  commonModalSlides,
+  commonScreens,
+  notLoggedInModalSlides,
+  notLoggedInScreens,
+  userModalSlides,
+  userScreens,
+} from './routes';
 import {RootStackRoutes, ScreenOptions} from './types';
 
 const RootStack = createStackNavigator<RootStackRoutes>();
 
 const RootStackNavigation = () => {
   const {Fonts, Colors} = useTheme();
-
+  const isAuth = useSelector(getIsAuth);
   const screenOptions: ScreenOptions<RootStackRoutes, StackNavigationOptions> =
     {BottomTab: {headerShown: false}};
 
@@ -32,6 +41,7 @@ const RootStackNavigation = () => {
       <RootStack.Group screenOptions={defaultOptions}>
         {Object.entries({
           ...commonScreens,
+          ...(isAuth ? userScreens : notLoggedInScreens),
         }).map(([name, component]: any) => (
           <RootStack.Screen
             key={name}
@@ -50,18 +60,7 @@ const RootStackNavigation = () => {
         })}>
         {Object.entries({
           ...commonModalSlides,
-        }).map(([name, component]: any) => (
-          <RootStack.Screen
-            key={name}
-            name={name}
-            component={component}
-            options={screenOptions[name]}
-          />
-        ))}
-      </RootStack.Group>
-      <RootStack.Group screenOptions={defaultOptions}>
-        {Object.entries({
-          ...userModalSlides,
+          ...(isAuth ? userModalSlides : notLoggedInModalSlides),
         }).map(([name, component]: any) => (
           <RootStack.Screen
             key={name}

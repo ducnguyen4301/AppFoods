@@ -1,9 +1,13 @@
 import React from 'react';
 import MainNavigation from 'navigation';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {Provider} from 'react-redux';
+import {persistor, store} from '@store';
+import {PersistGate} from 'redux-persist/integration/react';
 const App = () => (
-  <SafeAreaProvider>
-    <MainNavigation />
-  </SafeAreaProvider>
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <MainNavigation />
+    </PersistGate>
+  </Provider>
 );
 export default App;
