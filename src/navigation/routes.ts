@@ -1,5 +1,6 @@
 import {Auth, BottomTab} from '@screens';
 import BottomTabNavigation from './BottomTab';
+import RootStackNavigation from './RootStackNavigation';
 
 /**
  * Common screens
@@ -11,23 +12,14 @@ export const commonScreens = {
 /**
  * Screens when user logged in
  */
-export const userScreens = [
-  {component: BottomTab.Home, name: 'Home'},
-  {component: BottomTab.MyOrder, name: 'MyOrders'},
-  {component: BottomTab.Likes, name: 'Likes'},
-  {component: BottomTab.Notify, name: 'Notifications'},
-  {component: BottomTab.Me, name: 'Me'},
-];
+export const userScreens = {};
 
 /**
  * Screens user when user not logged in
  */
-export const notLoggedInScreens = [
-  {component: Auth.LoginScreen, name: 'Login'},
-  {component: Auth.RegisterScreen, name: 'Register'},
-  {component: Auth.ForgotPassScreen, name: 'Forgotpass'},
-  {component: Auth.OTPScreen, name: 'OTP'},
-];
+export const notLoggedInScreens = {
+  Auth: RootStackNavigation,
+};
 
 /**
  * Modal

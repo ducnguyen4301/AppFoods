@@ -3,7 +3,8 @@ import {
   StackNavigationOptions,
   TransitionPresets,
 } from '@react-navigation/stack';
-import {getIsAuth} from '@store/selectors';
+//import {getIsAuth} from '@store/selectors';
+import {UserState} from '@store/types';
 import {useTheme} from '@theme';
 import React from 'react';
 import {useSelector} from 'react-redux';
@@ -20,7 +21,8 @@ import {RootStackRoutes, ScreenOptions} from './types';
 const RootStack = createStackNavigator<RootStackRoutes>();
 const RootStackNavigation = () => {
   const {Fonts, Colors} = useTheme();
-  const isAuth = useSelector(getIsAuth);
+  const isAuth = useSelector((state: UserState) => state.isAuth);
+  console.log(isAuth);
   const screenOptions: ScreenOptions<RootStackRoutes, StackNavigationOptions> =
     {BottomTab: {headerShown: false}};
 

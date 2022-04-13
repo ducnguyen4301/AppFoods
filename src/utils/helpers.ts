@@ -1,8 +1,18 @@
 import {Colors} from '@theme/color';
 import {Alert, Linking} from 'react-native';
+import {call} from '@redux-saga/core/effects';
 import InAppBrowser, {
   InAppBrowserOptions,
 } from 'react-native-inappbrowser-reborn';
+
+type SafeConfigs = {
+  hideAlert?: boolean;
+  customError?: (err: any) => void;
+  alert?: {
+    title?: string;
+    message?: string;
+  };
+};
 
 const Helper = {
   generateUUID: (): string => {
@@ -88,6 +98,27 @@ const Helper = {
       InAppBrowser.close();
       Alert.alert('' + error);
     }
+  },
+  safe: (saga: any, configs?: SafeConfigs, ...args: any[]) => {
+    return function* (action: any) {
+      try {
+        yield call(saga, ...args, action);
+      } catch (err) {
+        if (typeof configs?.customError === 'function') {
+          yield call(configs.customError, err);
+        }
+        if (err.error === 'Unauthorized') {
+          Alert.alert('aaaaa');
+        }
+        if (!configs?.hideAlert) {
+          if (err.message === 'Network Error') {
+            Alert.alert('Lỗi kết nối mạng');
+          } else {
+            Alert.alert(configs?.alert?.message ?? err.message);
+          }
+        }
+      }
+    };
   },
 };
 

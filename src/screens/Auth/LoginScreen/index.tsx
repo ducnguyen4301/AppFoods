@@ -10,14 +10,16 @@ import {LoginForm} from '@components/Auth';
 import {useDispatch} from 'react-redux';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
+import {login} from '@store/sagas/auth/slice';
 const LoginScreen = () => {
   const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
   const {Colors} = useTheme();
   const dispatch = useDispatch();
-  const _loginAccount = (values: {username: string; password: string}) => {
-    console.log(dispatch(values));
+  const _loginAccount = (values: {email: string; password: string}) => {
+    dispatch(login(values));
   };
+
   return (
     <Block style={styles.container}>
       <Block flexGrow style={{paddingTop: top}}>
