@@ -18,7 +18,6 @@ import {
 import {RootStackRoutes, ScreenOptions} from './types';
 
 const RootStack = createStackNavigator<RootStackRoutes>();
-
 const RootStackNavigation = () => {
   const {Fonts, Colors} = useTheme();
   const isAuth = useSelector(getIsAuth);

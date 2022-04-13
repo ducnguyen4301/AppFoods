@@ -7,16 +7,16 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {LoginForm} from '@components/Auth';
-//import {useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 const LoginScreen = () => {
   const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
   const {Colors} = useTheme();
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const _loginAccount = (values: {username: string; password: string}) => {
-    console.log(values);
+    console.log(dispatch(values));
   };
   return (
     <Block style={styles.container}>
