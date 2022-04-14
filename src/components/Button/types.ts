@@ -67,7 +67,7 @@ export interface ButtonProps extends PressableProps, CommonButtonProps {
   /**
    * Type of button. Default is **primary**
    */
-  type?: 'primary' | 'outline' | 'text';
+  type?: 'primary' | 'outline' | 'text' | 'orange';
 
   /**
    * props for label

@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
 });
 
 type IProps = {
-  type: 'primary' | 'outline' | 'text';
+  type: 'primary' | 'outline' | 'text' | 'orange';
   Colors: ThemeColors;
   pressed: boolean;
   isDisabled?: boolean;
@@ -167,7 +167,7 @@ const getDefaultButtonStyles = ({
 }: IProps) => {
   let buttonDefaultStyle: any = {
     borderRadius: 8,
-    backgroundColor: pressed ? Colors.focus : Colors.primary,
+    backgroundColor: pressed ? Colors.orangeJuice : Colors.orange,
   };
   if (type === 'text' || type === 'outline') {
     buttonDefaultStyle.backgroundColor = 'transparent';

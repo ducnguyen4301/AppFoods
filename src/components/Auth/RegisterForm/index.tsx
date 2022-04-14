@@ -89,7 +89,7 @@ const RegisterForm = ({onSubmit}: SignUpFormProps) => {
             confirmPassword: '',
           }),
         )}
-        backgroundColor="orange"
+        disabledBackground={Colors.secondaryText}
         disabled={!isValid}
       />
     </Block>

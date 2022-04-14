@@ -57,7 +57,7 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
       <Button
         title="Đăng nhập"
         onPress={handleSubmit(onSubmit as any)}
-        backgroundColor="gray"
+        disabledBackground={Colors.secondaryText}
         disabled={!isValid}
       />
     </Block>

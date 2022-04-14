@@ -1,12 +1,12 @@
 import {Block, Button, FormInput, Text} from '@components';
 import {yupResolver} from '@hookform/resolvers/yup';
+import {loginPhone} from '@screens/Auth/LoginPhone/validatePhone';
 import {useTheme} from '@theme';
 import {navigate} from 'navigation/NavigationServices';
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import {useTranslation} from 'react-i18next';
 import {TouchableOpacity} from 'react-native';
-import {loginValidate} from '../../../screens/Auth/LoginScreen/validate';
 import styles from './styles';
 
 type LoginPhoneProps = {
@@ -21,7 +21,7 @@ const LoginPhone = ({onSubmit}: LoginPhoneProps) => {
     handleSubmit,
     formState: {isValid},
   } = useForm({
-    resolver: yupResolver(loginValidate),
+    resolver: yupResolver(loginPhone),
     mode: 'onChange',
   });
 
@@ -29,7 +29,7 @@ const LoginPhone = ({onSubmit}: LoginPhoneProps) => {
     <Block padding={{horizontal: 16}}>
       <FormInput
         control={control}
-        name="username"
+        name="phone"
         placeholder="Số điện thoại"
         placeholderTextColor={Colors.secondaryText}
         inputStyle={styles.inputStyle}
@@ -46,7 +46,7 @@ const LoginPhone = ({onSubmit}: LoginPhoneProps) => {
       <Button
         title="Tiếp tục"
         onPress={handleSubmit(onSubmit as any)}
-        backgroundColor="gray"
+        disabledBackground={Colors.secondaryText}
         disabled={!isValid}
       />
     </Block>
