@@ -115,7 +115,7 @@ const TextInput = forwardRef<any, InputProps>((props, ref) => {
         <IconComponent
           style={defaultIconStyle}
           size={20}
-          color={Colors.blueyGrey || Colors.orange}
+          color={Colors.blueyGrey || Colors.secondaryText}
           name={secureEye ? 'eye' : 'eye-off'}
           type="ionicons"
           onPress={() => setSecureEye(prev => !prev)}

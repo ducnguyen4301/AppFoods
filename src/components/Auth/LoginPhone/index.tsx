@@ -9,11 +9,11 @@ import {TouchableOpacity} from 'react-native';
 import {loginValidate} from '../../../screens/Auth/LoginScreen/validate';
 import styles from './styles';
 
-type LoginFormProps = {
-  onSubmit: (values: {email: string; password: string}) => void;
+type LoginPhoneProps = {
+  onSubmit: (values: {phone: number}) => void;
 };
 
-const LoginForm = ({onSubmit}: LoginFormProps) => {
+const LoginPhone = ({onSubmit}: LoginPhoneProps) => {
   const {Colors} = useTheme();
   const {t} = useTranslation();
   const {
@@ -30,32 +30,21 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
       <FormInput
         control={control}
         name="username"
-        placeholder="Email/Tên đăng nhập"
+        placeholder="Số điện thoại"
         placeholderTextColor={Colors.secondaryText}
         inputStyle={styles.inputStyle}
         error
         errorStyle={styles.error}
-      />
-      <Block height={25} />
-      <FormInput
-        control={control}
-        name="password"
-        placeholder="Mật khẩu"
-        placeholderTextColor={Colors.secondaryText}
-        inputStyle={styles.inputStyle}
-        secureTextEntry
-        onSubmitEditing={handleSubmit(onSubmit as any)}
+        keyboardType={'numeric'}
       />
       <Block margin={{top: 16}} alignSelf="flex-end">
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigate('LoginPhone')}>
-          <Text color="#1877f2">{t('Đăng nhập bằng SMS')}</Text>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => navigate('Login')}>
+          <Text color="#1877f2">{t('Đăng nhập bằng Mật Khẩu')}</Text>
         </TouchableOpacity>
       </Block>
       <Block height={34} />
       <Button
-        title="Đăng nhập"
+        title="Tiếp tục"
         onPress={handleSubmit(onSubmit as any)}
         backgroundColor="gray"
         disabled={!isValid}
@@ -64,4 +53,4 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
   );
 };
 
-export default LoginForm;
+export default LoginPhone;

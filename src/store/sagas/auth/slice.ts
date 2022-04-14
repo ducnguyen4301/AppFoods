@@ -1,5 +1,10 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {AuthResponse, LoginRequest, SignUpRequest} from '../../types';
+import {
+  AuthResponse,
+  LoginRequest,
+  LoginRequestPhone,
+  SignUpRequest,
+} from '../../types';
 
 const initialState: any = {
   isAuth: false,
@@ -14,6 +19,12 @@ const authSlice = createSlice({
     //Login account
     login: {
       prepare: (payload: LoginRequest) => ({payload}),
+      reducer: state => {
+        state.isLoading = true;
+      },
+    },
+    loginPhone: {
+      prepare: (payload: LoginRequestPhone) => ({payload}),
       reducer: state => {
         state.isLoading = true;
       },
@@ -55,6 +66,7 @@ export const updateUserInfo = (
 
 export const {
   login,
+  loginPhone,
   loginSuccess,
   signUp,
   signUpSuccess,

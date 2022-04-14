@@ -1,6 +1,5 @@
 import {Auth, BottomTab} from '@screens';
 import BottomTabNavigation from './BottomTab';
-import RootStackNavigation from './RootStackNavigation';
 
 /**
  * Common screens
@@ -17,10 +16,7 @@ export const userScreens = {};
 /**
  * Screens user when user not logged in
  */
-export const notLoggedInScreens = {
-  Auth: RootStackNavigation,
-};
-
+export const notLoggedInScreens = {};
 /**
  * Modal
  */
@@ -37,7 +33,6 @@ export const bottomTabScreens = [
   {component: BottomTab.Likes, name: 'Likes'},
   {component: BottomTab.Notify, name: 'Notifications'},
   {component: BottomTab.Me, name: 'Me'},
-  {component: Auth.LoginScreen, name: 'LoginScreen'},
-  {component: Auth.RegisterScreen, name: 'RegisterScreen'},
-  {component: Auth.OTPScreen, name: 'OTP'},
+  {component: Auth.LoginScreen, name: 'Login'},
+  {component: Auth.LoginPhone, name: 'LoginPhone'},
 ];

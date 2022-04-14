@@ -2,7 +2,9 @@ export interface LoginRequest {
   email: string;
   password: string;
 }
-
+export interface LoginRequestPhone {
+  phone: number;
+}
 export interface UserState {
   isLoading: boolean;
   user: any | null;

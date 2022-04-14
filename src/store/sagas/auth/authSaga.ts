@@ -9,18 +9,22 @@ import {
   getCurrentUser,
   getCurrentUserSuccess,
   login,
+  loginPhone,
   loginSuccess,
   logout,
   signUp,
   signUpSuccess,
 } from './slice';
-import {LoginRequest, SignUpRequest} from '../../types';
+import {LoginRequest, LoginRequestPhone, SignUpRequest} from '../../types';
 
 function* handleLogin(action: PayloadAction<LoginRequest>) {
   const {data} = yield call(api, '/auth/login', action.payload);
   yield put(loginSuccess(data));
 }
-
+function* handleLoginPhone(action: PayloadAction<LoginRequestPhone>) {
+  const {data} = yield call(api, '/auth/login', action.payload);
+  yield put(loginSuccess(data));
+}
 function* handleSignUp(action: PayloadAction<SignUpRequest>) {
   yield call(api, '/auth/register', action.payload);
   yield put(signUpSuccess());
@@ -47,6 +51,13 @@ export default [
   takeLatest(
     login.type,
     Helper.safe(handleLogin, safeConfigs('Đăng nhập thất bại', authError())),
+  ),
+  takeLatest(
+    loginPhone.type,
+    Helper.safe(
+      handleLoginPhone,
+      safeConfigs('Đăng nhập thất bại', authError()),
+    ),
   ),
   takeLatest(
     signUp.type,

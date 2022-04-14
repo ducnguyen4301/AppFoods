@@ -65,8 +65,8 @@ const BottomTabNavigation = () => {
         />
       ),
     },
-    LoginScreen: {
-      tabBarLabel: 'LoginScreen',
+    Login: {
+      tabBarLabel: 'Login',
       tabBarIcon: ({focused}) => (
         <CustomIcon
           name={focused ? 'user' : 'user-o'}
@@ -75,8 +75,8 @@ const BottomTabNavigation = () => {
         />
       ),
     },
-    OTPScreen: {
-      tabBarLabel: 'OTP',
+    LoginPhone: {
+      tabBarLabel: 'LoginPhone',
       tabBarIcon: ({focused}) => (
         <CustomIcon
           name={focused ? 'user' : 'user-o'}
