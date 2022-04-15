@@ -1,5 +1,5 @@
 import {CustomIcon} from '@assets/icons';
-import {Block} from '@components';
+import {Block, Text} from '@components';
 //import {navigate} from 'navigation/NavigationServices';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
@@ -31,6 +31,27 @@ const LoginScreen = () => {
           />
         </Block>
         <LoginPhone onSubmit={_loginAccount} />
+        <Block align="center" row margin={{top: 50}} justify="center">
+          <Text color="secondaryText" style={styles.orText}>
+            ----------------------
+          </Text>
+          <Text color="secondaryText" fontType="demiBold">
+            HOẶC
+          </Text>
+          <Text color="secondaryText" style={styles.orText}>
+            ----------------------
+          </Text>
+        </Block>
+        <Block align="center" row margin={{top: 25}} justify="center">
+          <TouchableOpacity style={styles.loginOtherGG}>
+            <Text style={styles.loginOtherText}>Dang nhap voi Google</Text>
+          </TouchableOpacity>
+        </Block>
+        <Block align="center" row margin={{top: 20}} justify="center">
+          <TouchableOpacity style={styles.loginOtherFB}>
+            <Text style={styles.loginOtherText}>Dang nhap voi FaceBook</Text>
+          </TouchableOpacity>
+        </Block>
       </Block>
       <TouchableOpacity
         style={[styles.closeBtn, {top}]}

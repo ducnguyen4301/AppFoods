@@ -1,3 +1,4 @@
+import {Colors} from '@theme/color';
 import {getSize} from '@utils/reponsive';
 import {StyleSheet} from 'react-native';
 
@@ -8,7 +9,21 @@ export default StyleSheet.create({
     position: 'absolute',
     left: 0,
   },
-  registerText: {
-    textDecorationLine: 'underline',
+  orText: {
+    textDecorationLine: 'line-through',
+  },
+  loginOtherGG: {
+    backgroundColor: Colors.primary,
+    paddingVertical: getSize.m(8),
+    paddingHorizontal: getSize.m(90),
+  },
+  loginOtherFB: {
+    backgroundColor: Colors.primary,
+    paddingVertical: getSize.m(8),
+    paddingHorizontal: getSize.m(81),
+  },
+  loginOtherText: {
+    color: Colors.white,
+    fontWeight: '500',
   },
 });

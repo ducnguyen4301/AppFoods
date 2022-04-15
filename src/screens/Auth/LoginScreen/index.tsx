@@ -1,6 +1,5 @@
 import {CustomIcon} from '@assets/icons';
 import {Block, Text} from '@components';
-import {navigate} from 'navigation/NavigationServices';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
 import React from 'react';
@@ -32,13 +31,24 @@ const LoginScreen = () => {
         </Block>
         <LoginForm onSubmit={_loginAccount} />
         <Block align="center" row margin={{top: 50}} justify="center">
-          <Text color="orange">Bạn chưa có tài khoản? </Text>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => navigate('RegisterScreen')}>
-            <Text color="orange" fontType="bold" style={styles.registerText}>
-              Đăng ký
-            </Text>
+          <Text color="secondaryText" style={styles.orText}>
+            ----------------------
+          </Text>
+          <Text color="secondaryText" fontType="demiBold">
+            HOẶC
+          </Text>
+          <Text color="secondaryText" style={styles.orText}>
+            ----------------------
+          </Text>
+        </Block>
+        <Block align="center" row margin={{top: 25}} justify="center">
+          <TouchableOpacity style={styles.loginOtherGG}>
+            <Text style={styles.loginOtherText}>Dang nhap voi Google</Text>
+          </TouchableOpacity>
+        </Block>
+        <Block align="center" row margin={{top: 20}} justify="center">
+          <TouchableOpacity style={styles.loginOtherFB}>
+            <Text style={styles.loginOtherText}>Dang nhap voi FaceBook</Text>
           </TouchableOpacity>
         </Block>
       </Block>
