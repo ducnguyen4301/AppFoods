@@ -13,7 +13,9 @@ const userReducer = produce((state: UserState = INITIAL_STATE, action) => {
     case actions.LOGIN_REQUEST:
       state.isLoading = true;
       return state;
-
+    case actions.LOGIN_REQUEST_PHONE:
+      state.isLoading = true;
+      return state;
     case actions.LOGIN_ACCOUNT_SUCCESS:
       state.isLoading = false;
       state.isAuth = true;

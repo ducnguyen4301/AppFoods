@@ -4,10 +4,10 @@ import {
   NativeSyntheticEvent,
   StyleSheet,
   TextInputFocusEventData,
+  TouchableOpacity,
   TouchableWithoutFeedback,
   ViewStyle,
 } from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import TextInputMask from 'react-native-text-input-mask';
 import Block from '../Block';
 import IconComponent from '../Icon';
@@ -117,7 +117,7 @@ const TextInput = forwardRef<any, InputProps>((props, ref) => {
 
     if (secureTextEntry && isRight && !rightIcon) {
       return (
-        <>
+        <Block row justify="center" align="center">
           <IconComponent
             style={defaultIconStyle}
             size={20}
@@ -126,13 +126,13 @@ const TextInput = forwardRef<any, InputProps>((props, ref) => {
             type="ionicons"
             onPress={() => setSecureEye(prev => !prev)}
           />
-          <Block row>
-            <Text color="secondaryText">|</Text>
-            <TouchableOpacity onPress={() => navigate('ForgotPass')}>
-              <Text style={defaultTextStyle}>Quên?</Text>
-            </TouchableOpacity>
-          </Block>
-        </>
+          <Text color="secondaryText">|</Text>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigate('ForgotPass')}>
+            <Text style={defaultTextStyle}>Quên?</Text>
+          </TouchableOpacity>
+        </Block>
       );
     }
 

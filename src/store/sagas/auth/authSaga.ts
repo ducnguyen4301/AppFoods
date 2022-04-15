@@ -22,7 +22,7 @@ function* handleLogin(action: PayloadAction<LoginRequest>) {
   yield put(loginSuccess(data));
 }
 function* handleLoginPhone(action: PayloadAction<LoginRequestPhone>) {
-  const {data} = yield call(api, '/auth/login', action.payload);
+  const {data} = yield call(api, '/auth/loginPhone', action.payload);
   yield put(loginSuccess(data));
 }
 function* handleSignUp(action: PayloadAction<SignUpRequest>) {
