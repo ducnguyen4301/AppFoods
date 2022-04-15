@@ -1,5 +1,4 @@
-import {CustomIcon} from '@assets/icons';
-import {Block, Text} from '@components';
+import {Block, IconComponent, Text, FormContainer} from '@components';
 //import {navigate} from 'navigation/NavigationServices';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
@@ -22,42 +21,46 @@ const LoginScreen = () => {
 
   return (
     <Block style={styles.container}>
-      <Block flexGrow style={{paddingTop: top}}>
-        <Block margin={{vertical: 26, top: 84}} align="center">
-          <CustomIcon
-            name="heart-o"
-            size={getSize.s(35)}
-            color={Colors.orange}
-          />
+      <FormContainer>
+        <Block flexGrow style={{paddingTop: top}}>
+          <Block margin={{vertical: 26, top: 84}} align="center">
+            <IconComponent
+              name="logo"
+              type="custom"
+              size={getSize.s(60)}
+              color={Colors.orangeJuice}
+            />
+          </Block>
+          <LoginPhone onSubmit={_loginAccount} />
+          <Block align="center" row margin={{top: 50}} justify="center">
+            <Text color="secondaryText" style={styles.orText}>
+              ----------------------
+            </Text>
+            <Text color="secondaryText" fontType="demiBold">
+              HOẶC
+            </Text>
+            <Text color="secondaryText" style={styles.orText}>
+              ----------------------
+            </Text>
+          </Block>
+          <Block align="center" row margin={{top: 25}} justify="center">
+            <TouchableOpacity style={styles.loginOtherGG}>
+              <Text style={styles.loginOtherText}>Dang nhap voi Google</Text>
+            </TouchableOpacity>
+          </Block>
+          <Block align="center" row margin={{top: 20}} justify="center">
+            <TouchableOpacity style={styles.loginOtherFB}>
+              <Text style={styles.loginOtherText}>Dang nhap voi FaceBook</Text>
+            </TouchableOpacity>
+          </Block>
         </Block>
-        <LoginPhone onSubmit={_loginAccount} />
-        <Block align="center" row margin={{top: 50}} justify="center">
-          <Text color="secondaryText" style={styles.orText}>
-            ----------------------
-          </Text>
-          <Text color="secondaryText" fontType="demiBold">
-            HOẶC
-          </Text>
-          <Text color="secondaryText" style={styles.orText}>
-            ----------------------
-          </Text>
-        </Block>
-        <Block align="center" row margin={{top: 25}} justify="center">
-          <TouchableOpacity style={styles.loginOtherGG}>
-            <Text style={styles.loginOtherText}>Dang nhap voi Google</Text>
-          </TouchableOpacity>
-        </Block>
-        <Block align="center" row margin={{top: 20}} justify="center">
-          <TouchableOpacity style={styles.loginOtherFB}>
-            <Text style={styles.loginOtherText}>Dang nhap voi FaceBook</Text>
-          </TouchableOpacity>
-        </Block>
-      </Block>
+      </FormContainer>
       <TouchableOpacity
         style={[styles.closeBtn, {top}]}
         onPress={() => navigation.goBack()}>
-        <CustomIcon
+        <IconComponent
           name="chevron-left"
+          type="custom"
           color={Colors.orange}
           size={getSize.s(20)}
         />
