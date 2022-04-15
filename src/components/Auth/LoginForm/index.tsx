@@ -44,7 +44,7 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
         placeholderTextColor={Colors.secondaryText}
         inputStyle={styles.inputStyle}
         secureTextEntry
-        onSubmitEditing={handleSubmit(onSubmit as any)}
+        onSubmitEditing={handleSubmit(() => onSubmit)}
       />
       <Block margin={{top: 16}} alignSelf="flex-end">
         <TouchableOpacity
@@ -56,7 +56,7 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
       <Block height={34} />
       <Button
         title="Đăng nhập"
-        onPress={handleSubmit(onSubmit as any)}
+        onPress={handleSubmit(() => onSubmit)}
         disabledBackground={Colors.secondaryText}
         disabled={!isValid}
       />

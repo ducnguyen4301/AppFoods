@@ -7,13 +7,14 @@ import {
   TouchableWithoutFeedback,
   ViewStyle,
 } from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import TextInputMask from 'react-native-text-input-mask';
 import Block from '../Block';
 import IconComponent from '../Icon';
 import Text from '../Text';
 import {isIcon, isString} from '../utils';
 import {InputProps} from './types';
-
+import {navigate} from 'navigation/NavigationServices';
 const MIN_HEIGHT_INPUT = 45;
 
 const TextInput = forwardRef<any, InputProps>((props, ref) => {
@@ -105,21 +106,33 @@ const TextInput = forwardRef<any, InputProps>((props, ref) => {
   const _renderIcon = (isRight?: boolean) => {
     const defaultIconStyle = {
       minHeight: MIN_HEIGHT_INPUT,
-      paddingHorizontal: 16,
+      paddingHorizontal: 8,
       opacity: disabled ? 0.5 : 1,
       justifyContent: 'center' as ViewStyle['justifyContent'],
+    };
+    const defaultTextStyle = {
+      color: Colors.primary,
+      paddingHorizontal: 5,
     };
 
     if (secureTextEntry && isRight && !rightIcon) {
       return (
-        <IconComponent
-          style={defaultIconStyle}
-          size={20}
-          color={Colors.blueyGrey || Colors.secondaryText}
-          name={secureEye ? 'eye' : 'eye-off'}
-          type="ionicons"
-          onPress={() => setSecureEye(prev => !prev)}
-        />
+        <>
+          <IconComponent
+            style={defaultIconStyle}
+            size={20}
+            color={Colors.blueyGrey || Colors.secondaryText}
+            name={secureEye ? 'eye' : 'eye-off'}
+            type="ionicons"
+            onPress={() => setSecureEye(prev => !prev)}
+          />
+          <Block row>
+            <Text color="secondaryText">|</Text>
+            <TouchableOpacity onPress={() => navigate('ForgotPass')}>
+              <Text style={defaultTextStyle}>Quên?</Text>
+            </TouchableOpacity>
+          </Block>
+        </>
       );
     }
 

@@ -45,7 +45,7 @@ const LoginPhone = ({onSubmit}: LoginPhoneProps) => {
       <Block height={34} />
       <Button
         title="Tiếp tục"
-        onPress={handleSubmit(onSubmit as any)}
+        onPress={handleSubmit(() => onSubmit)}
         disabledBackground={Colors.secondaryText}
         disabled={!isValid}
       />
