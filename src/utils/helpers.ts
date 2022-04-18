@@ -103,7 +103,7 @@ const Helper = {
     return function* (action: any) {
       try {
         yield call(saga, ...args, action);
-      } catch (err) {
+      } catch (err: any) {
         if (typeof configs?.customError === 'function') {
           yield call(configs.customError, err);
         }

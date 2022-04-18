@@ -65,26 +65,6 @@ const BottomTabNavigation = () => {
         />
       ),
     },
-    Login: {
-      tabBarLabel: 'Login',
-      tabBarIcon: ({focused}) => (
-        <CustomIcon
-          name={focused ? 'user' : 'user-o'}
-          size={24}
-          color={focused ? Colors.orange : Colors.black}
-        />
-      ),
-    },
-    LoginPhone: {
-      tabBarLabel: 'LoginPhone',
-      tabBarIcon: ({focused}) => (
-        <CustomIcon
-          name={focused ? 'user' : 'user-o'}
-          size={24}
-          color={focused ? Colors.orange : Colors.black}
-        />
-      ),
-    },
   };
 
   return (

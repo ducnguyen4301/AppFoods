@@ -16,7 +16,7 @@ export const userScreens = {};
 /**
  * Screens user when user not logged in
  */
-export const notLoggedInScreens = {};
+export const notLoggedInScreens = [];
 /**
  * Modal
  */
@@ -33,6 +33,5 @@ export const bottomTabScreens = [
   {component: BottomTab.Likes, name: 'Likes'},
   {component: BottomTab.Notify, name: 'Notifications'},
   {component: BottomTab.Me, name: 'Me'},
-  {component: Auth.LoginScreen, name: 'Login'},
-  {component: Auth.LoginPhone, name: 'LoginPhone'},
+  {component: Auth.LoginScreen, name: 'LoginScreen'},
 ];
