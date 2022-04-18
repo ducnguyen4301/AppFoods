@@ -5,12 +5,9 @@ import {
   SafeAreaView,
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
-import Block from '@components/Block';
-import Text from '@components/Text';
-import TextInputOTP from '@components/TextInputOTP';
 import {useTranslation} from 'react-i18next';
+import {Block, Button, Text, TextInputOTP} from '@components';
 import styles from './styles';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const inputs = Array(6).fill('');
 const arrOTP = Array(6).fill('');
@@ -33,6 +30,7 @@ const OTPS = () => {
     }
     setNextInputdex(newInputdex);
   };
+
   //console.log(newInputdex);
 
   useEffect(() => {
@@ -47,6 +45,7 @@ const OTPS = () => {
         values = values + v;
       });
     }
+    console.log(OTP);
   };
   return (
     <SafeAreaView>
@@ -76,9 +75,11 @@ const OTPS = () => {
             );
           })}
         </Block>
-        <TouchableOpacity style={styles.btnContinue} onPress={submitOTP}>
-          <Text style={styles.txtContinue}>{t('Tiếp tục')}</Text>
-        </TouchableOpacity>
+        <Button
+          title="Tiếp tục"
+          onPress={submitOTP}
+          style={styles.btnContinue}
+        />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );

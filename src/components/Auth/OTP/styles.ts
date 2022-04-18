@@ -35,16 +35,10 @@ export default StyleSheet.create({
     paddingHorizontal: 15,
   },
   btnContinue: {
-    backgroundColor: Colors.orange,
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 25,
     marginVertical: 30,
     paddingVertical: 10,
-  },
-  txtContinue: {
-    color: Colors.white,
-    fontSize: 16,
-    fontWeight: '500',
   },
 });

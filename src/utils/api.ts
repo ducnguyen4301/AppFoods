@@ -1,9 +1,9 @@
 import axios, {AxiosRequestConfig} from 'axios';
-import configs from 'react-native-config';
+import Config from 'react-native-config';
 import {get} from 'lodash';
 
 const headers: {[k: string]: string} = {};
-const apiServerUrl = configs.API_SERVER_URL;
+const apiServerUrl = Config.API_SERVER_URL;
 
 type AxiosInstanceType = {
   version: string;
@@ -42,7 +42,7 @@ const api = async (
   url: string,
   data?: any,
   options: AxiosRequestConfig = {},
-  version: string = configs.API_VERSION,
+  version: string = Config.API_VERSION,
 ) => {
   try {
     const API = await getAxiosInstance({version});
