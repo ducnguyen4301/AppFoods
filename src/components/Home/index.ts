@@ -1,1 +1,1 @@
-export {default as SearchBar} from '@components/Home/SearchBar';
+export {default as Header} from './Header';
