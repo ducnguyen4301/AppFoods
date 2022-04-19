@@ -1,13 +1,9 @@
-import {
-  Keyboard,
-  KeyboardAvoidingView,
-  Platform,
-  SafeAreaView,
-} from 'react-native';
+import {Keyboard, SafeAreaView} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {Block, Button, Text, TextInputOTP} from '@components';
 import styles from './styles';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const inputs = Array(6).fill('');
 const arrOTP = Array(6).fill('');
@@ -49,9 +45,12 @@ const OTPS = () => {
   };
   return (
     <SafeAreaView>
-      <KeyboardAvoidingView
-        style={styles.container}
-        behavior={Platform.select({ios: 'padding', android: 'height'})}>
+      <KeyboardAwareScrollView
+        keyboardShouldPersistTaps="handled"
+        enableOnAndroid={true}
+        showsVerticalScrollIndicator={false}
+        enableResetScrollToCoords={false}>
+        {/* behavior={Platform.select({ios: 'padding', android: 'height'})} */}
         <Block>
           <Text style={styles.txtOTP}>
             {t('Mã xác minh của bạn đã được gửi tới số')}
@@ -80,7 +79,7 @@ const OTPS = () => {
           onPress={submitOTP}
           style={styles.btnContinue}
         />
-      </KeyboardAvoidingView>
+      </KeyboardAwareScrollView>
     </SafeAreaView>
   );
 };

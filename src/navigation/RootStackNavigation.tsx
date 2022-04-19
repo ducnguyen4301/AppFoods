@@ -18,7 +18,6 @@ import {
 import {RootStackRoutes, ScreenOptions} from './types';
 
 const RootStack = createStackNavigator<RootStackRoutes>();
-
 const RootStackNavigation = () => {
   const {Fonts, Colors} = useTheme();
   const isAuth = useSelector(getIsAuth);
@@ -27,6 +26,7 @@ const RootStackNavigation = () => {
 
   const defaultOptions = ({}: any) => ({
     title: '',
+    headerShown: false,
     headerTitleAllowFontScaling: false,
     headerTitleStyle: {
       ...Fonts.bold,
@@ -40,14 +40,13 @@ const RootStackNavigation = () => {
     <RootStack.Navigator>
       <RootStack.Group screenOptions={defaultOptions}>
         {Object.entries({
-          ...commonScreens,
           ...(isAuth ? userScreens : notLoggedInScreens),
-        }).map(([name, component]: any) => (
+        }).map(([key, value]: any) => (
           <RootStack.Screen
-            key={name}
-            name={name}
-            component={component}
-            options={screenOptions[name]}
+            key={key.toString()}
+            name={value?.name}
+            component={value?.component}
+            options={screenOptions[value?.name]}
           />
         ))}
       </RootStack.Group>
