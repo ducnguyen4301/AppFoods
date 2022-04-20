@@ -11,7 +11,7 @@ export const commonScreens = {
 /**
  * Screens when user logged in
  */
-export const userScreens = [];
+export const userScreens = [{component: BottomTab.Home, name: 'Home'}];
 
 /**
  * Screens user when user not logged in

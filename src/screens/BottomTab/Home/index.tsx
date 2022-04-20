@@ -4,6 +4,7 @@ import '@i18n';
 import {useTranslation} from 'react-i18next';
 import {Block, IconComponent, Text} from '@components';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {Header} from '@components/Home';
 
 const Home = () => {
   const {t} = useTranslation('Home');
@@ -30,6 +31,17 @@ const Home = () => {
           {t('201/10 Đ.Lê Văn Việt, Hiệp Phú, Quận 9, Thành phố HCM')}
         </Text>
         <IconComponent name="chevron-right" type="custom" color="orange" />
+      </Block>
+      <Block
+        style={{
+          display: 'flex',
+          height: 60,
+          justifyContent: 'space-around',
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginLeft: 4,
+        }}>
+        <Header onTextChange={() => {}} />
       </Block>
     </SafeAreaView>
   );
