@@ -38,7 +38,9 @@ const LoginPhone = ({onSubmit}: LoginPhoneProps) => {
         keyboardType={'numeric'}
       />
       <Block margin={{top: 16}} alignSelf="flex-end">
-        <TouchableOpacity activeOpacity={0.8} onPress={() => navigate('Login')}>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => navigate('LoginScreen')}>
           <Text color="#1877f2">{t('Đăng nhập bằng Mật Khẩu')}</Text>
         </TouchableOpacity>
       </Block>

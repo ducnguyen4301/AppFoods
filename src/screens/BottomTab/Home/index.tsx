@@ -15,22 +15,22 @@ const Home = () => {
           <Text
             size={13}
             margin={{left: 7, right: 4}}
-            color="orange"
+            color="secondaryText"
             style={{fontFamily: 'BR Firma Bold'}}>
             {t('Giao hàng đến:')}
           </Text>
         </Block>
       </Block>
-      <Block row align="center">
-        <IconComponent name="location" type="custom" color="orange" />
+      <Block row align="center" margin={{horizontal: 5}}>
+        <IconComponent name="location" type="custom" color="orangeJuice" />
         <Text
           size={13}
-          margin={{right: 4}}
-          color="orange"
+          margin={{left: 2, right: 2}}
+          color="primaryText"
           style={{fontFamily: 'BR Firma Bold'}}>
           {t('201/10 Đ.Lê Văn Việt, Hiệp Phú, Quận 9, Thành phố HCM')}
         </Text>
-        <IconComponent name="chevron-right" type="custom" color="orange" />
+        <IconComponent name="chevron-right" type="custom" color="primaryText" />
       </Block>
       <Block
         style={{

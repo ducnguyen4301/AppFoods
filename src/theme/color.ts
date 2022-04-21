@@ -17,4 +17,5 @@ export const Colors: ThemeColors = {
   oceanBlue: '#0077b6',
   veryLightPink: '#bcbcbc',
   lightBlue: '#96d3f2',
+  whiteSmoke: '#E8E8E8',
 };

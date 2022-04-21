@@ -9,6 +9,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {
   commonModalSlides,
+  commonScreens,
   notLoggedInModalSlides,
   notLoggedInScreens,
   userModalSlides,
@@ -17,15 +18,17 @@ import {
 import {RootStackRoutes, ScreenOptions} from './types';
 
 const RootStack = createStackNavigator<RootStackRoutes>();
+
 const RootStackNavigation = () => {
   const {Fonts, Colors} = useTheme();
   const isAuth = useSelector(getIsAuth);
+  console.log(isAuth);
+
   const screenOptions: ScreenOptions<RootStackRoutes, StackNavigationOptions> =
     {BottomTab: {headerShown: false}};
 
   const defaultOptions = ({}: any) => ({
     title: '',
-    headerShown: false,
     headerTitleAllowFontScaling: false,
     headerTitleStyle: {
       ...Fonts.bold,
@@ -40,12 +43,13 @@ const RootStackNavigation = () => {
       <RootStack.Group screenOptions={defaultOptions}>
         {Object.entries({
           ...(isAuth ? userScreens : notLoggedInScreens),
-        }).map(([key, value]: any) => (
+          ...commonScreens,
+        }).map(([name, component]: any) => (
           <RootStack.Screen
-            key={key.toString()}
-            name={value?.name}
-            component={value?.component}
-            options={screenOptions[value?.name]}
+            key={name}
+            name={name}
+            component={component}
+            options={screenOptions[name]}
           />
         ))}
       </RootStack.Group>

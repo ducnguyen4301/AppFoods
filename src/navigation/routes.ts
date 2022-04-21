@@ -11,18 +11,17 @@ export const commonScreens = {
 /**
  * Screens when user logged in
  */
-export const userScreens = [{component: BottomTab.Home, name: 'Home'}];
+export const userScreens = {};
 
 /**
  * Screens user when user not logged in
  */
-export const notLoggedInScreens = [
-  {component: Auth.LoginScreen, name: 'Login'},
-  {component: Auth.LoginPhone, name: 'LoginP'},
-  {component: Auth.OTPScreen, name: 'OTP'},
-  {component: Auth.ForgotPassScreen, name: 'ForgotPass'},
-  //khai báo thêm các màn hình authen ở đây
-];
+export const notLoggedInScreens = {
+  LoginScreen: Auth.LoginScreen,
+  LoginPhone: Auth.LoginPhone,
+  OTP: Auth.OTPScreen,
+  ForgotPass: Auth.ForgotPassScreen,
+};
 /**
  * Modal
  */

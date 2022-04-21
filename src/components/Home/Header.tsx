@@ -1,8 +1,10 @@
 import React from 'react';
 import {Block, IconComponent} from '@components';
-import {useTranslation} from 'react-i18next';
-import {StyleSheet, TextInput} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import {getSize} from '@utils/reponsive';
+import {Colors} from '@theme/color';
+import Text from '@components/Text';
+import {navigate} from 'navigation/NavigationServices';
 
 interface SearchBarProps {
   onEndEditing?: any | undefined;
@@ -11,32 +13,17 @@ interface SearchBarProps {
   onTextChange: Function;
 }
 
-const Header: React.FC<SearchBarProps> = ({
-  onEndEditing,
-  didTouch,
-  autoFocus = false,
-  onTextChange,
-}) => {
-  const {t} = useTranslation();
+const Header: React.FC<SearchBarProps> = ({}) => {
   return (
     <Block style={styles.container}>
-      <Block style={styles.searchBar}>
+      <TouchableOpacity
+        style={styles.search}
+        onPress={() => navigate('SearchScreen')}>
         <IconComponent name="search" type="custom" />
-        <TextInput
-          style={{
-            marginLeft: 5,
-            flex: 9,
-            display: 'flex',
-            fontSize: 20,
-            height: 42,
-          }}
-          placeholder={t('Search Foods')}
-          autoFocus={autoFocus}
-          onTouchStart={didTouch}
-          onChangeText={(text: any) => onTextChange(text)}
-          onEndEditing={onEndEditing}
-        />
-      </Block>
+        <Text flex color="veryLightPink" padding={{horizontal: 2, vertical: 5}}>
+          Search Foods
+        </Text>
+      </TouchableOpacity>
     </Block>
   );
 };
@@ -45,24 +32,18 @@ export default Header;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: getSize.v(38),
-    display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignContent: 'center',
     alignItems: 'center',
+    height: getSize.v(50),
+    paddingHorizontal: 10,
   },
-  searchBar: {
-    display: 'flex',
-    height: getSize.v(38),
+  search: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: '#ededed',
     alignItems: 'center',
+    backgroundColor: Colors.whiteSmoke,
+    height: getSize.v(32),
     borderRadius: 2,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    marginHorizontal: 10,
+    paddingHorizontal: 5,
   },
 });
