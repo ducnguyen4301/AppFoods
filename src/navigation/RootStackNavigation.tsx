@@ -42,8 +42,8 @@ const RootStackNavigation = () => {
     <RootStack.Navigator>
       <RootStack.Group screenOptions={defaultOptions}>
         {Object.entries({
-          ...(isAuth ? userScreens : notLoggedInScreens),
           ...commonScreens,
+          ...(isAuth ? userScreens : notLoggedInScreens),
         }).map(([name, component]: any) => (
           <RootStack.Screen
             key={name}
