@@ -2,7 +2,7 @@ import {IconType} from '@assets/icons';
 import {FlexStyle, ViewStyle} from 'react-native';
 import {EdgeInsets} from 'react-native-safe-area-context';
 import {IconProps} from 'react-native-vector-icons/Icon';
-import {BlockProps} from './Block/types';
+import {BlockProps} from './base/Block/types';
 
 export const handleGutter = (
   type: 'padding' | 'margin',

@@ -1,8 +1,8 @@
-export {default as Text} from './Text';
-export {default as Block} from './Block';
-export {default as TextInput} from './TextInput';
+export {default as Text} from './base/Text';
+export {default as Block} from './base/Block';
+export {default as TextInput} from './base/TextInput';
 export {default as TextInputOTP} from './TextInputOTP';
-export {default as Button} from './Button';
-export {default as IconComponent} from './Icon';
+export {default as Button} from './base/Button';
+export {default as IconComponent} from './base/Icon';
 
-export * from './Form';
+export * from './base/Form';

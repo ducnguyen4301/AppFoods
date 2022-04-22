@@ -8,7 +8,7 @@ import {
   handleInset,
   isNumber,
   isUndefined,
-} from '../utils';
+} from '../../utils';
 import {BlockProps} from './types';
 
 const Block = React.forwardRef<any, BlockProps>((props, ref) => {

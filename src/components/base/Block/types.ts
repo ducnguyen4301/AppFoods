@@ -1,5 +1,5 @@
 import {FlexStyle, ViewProps, ViewStyle} from 'react-native';
-import {DefaultStyleProps, SafeAreaInsetType} from '../utils';
+import {DefaultStyleProps, SafeAreaInsetType} from '../../utils';
 
 export interface BlockProps extends DefaultStyleProps, ViewProps {
   /**

@@ -12,7 +12,7 @@ import TextInputMask from 'react-native-text-input-mask';
 import Block from '../Block';
 import IconComponent from '../Icon';
 import Text from '../Text';
-import {isIcon, isString} from '../utils';
+import {isIcon, isString} from '../../utils';
 import {InputProps} from './types';
 import {navigate} from 'navigation/NavigationServices';
 const MIN_HEIGHT_INPUT = 45;

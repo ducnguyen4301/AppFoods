@@ -18,4 +18,8 @@ export const Colors: ThemeColors = {
   veryLightPink: '#bcbcbc',
   lightBlue: '#96d3f2',
   whiteSmoke: '#E8E8E8',
+  blueSmoke: '#E0EEEE',
+  yellow: '#ffc107',
+  waveBlue: '#0288d1',
+  green: '#329900',
 };

@@ -1,4 +1,4 @@
-import {InputProps} from '@components/TextInput/types';
+import {InputProps} from '@components/base/TextInput/types';
 import {Control} from 'react-hook-form';
 
 export interface FormInputProps extends InputProps {

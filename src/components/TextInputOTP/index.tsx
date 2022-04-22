@@ -2,8 +2,8 @@ import {useTheme} from '@theme';
 import React, {forwardRef, useEffect, useRef} from 'react';
 import {StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import TextInputMask from 'react-native-text-input-mask';
-import Block from '../Block';
-import Text from '../Text';
+import Block from '../base/Block';
+import Text from '../base/Text';
 import {isString} from '../utils';
 import {InputOTPProps} from './types';
 

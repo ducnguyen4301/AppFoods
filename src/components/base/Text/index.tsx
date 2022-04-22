@@ -1,7 +1,7 @@
 import {useTheme} from '@theme';
 import React from 'react';
 import {StyleSheet, Text as ReactNativeText} from 'react-native';
-import {createDefaultStyle, handleGutter, isNumber} from '../utils';
+import {createDefaultStyle, handleGutter, isNumber} from '../../utils';
 import {CommonTextProps} from './types';
 
 const Text = (props: CommonTextProps) => {

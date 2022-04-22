@@ -1,7 +1,7 @@
 import {PressableProps, StyleProp, ViewStyle} from 'react-native';
 import {BlockProps} from '../Block/types';
 import {CommonTextProps} from '../Text/types';
-import {GutterProps, IconComponentProps} from '../utils';
+import {GutterProps, IconComponentProps} from '../../utils';
 
 export type CommonButtonProps = Omit<
   BlockProps,

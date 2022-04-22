@@ -1,4 +1,4 @@
-import TextInput from '@components/TextInput';
+import TextInput from '@components/base/TextInput';
 import React from 'react';
 import {Controller} from 'react-hook-form';
 import {NativeSyntheticEvent, TextInputFocusEventData} from 'react-native';

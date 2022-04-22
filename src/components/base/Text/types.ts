@@ -1,6 +1,6 @@
 import {ThemeFontWeight} from '@theme/types';
 import {TextProps} from 'react-native';
-import {DefaultStyleProps} from '../utils';
+import {DefaultStyleProps} from '../../utils';
 
 export interface CommonTextProps extends DefaultStyleProps, TextProps {
   /**

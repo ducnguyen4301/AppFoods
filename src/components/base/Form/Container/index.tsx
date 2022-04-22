@@ -1,4 +1,4 @@
-import Block from '@components/Block';
+import Block from '@components/base/Block';
 import React, {forwardRef} from 'react';
 import {
   InputAccessoryView,

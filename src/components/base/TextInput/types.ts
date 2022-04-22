@@ -5,7 +5,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {TextInputMaskProps} from 'react-native-text-input-mask';
-import {IconComponentProps} from '../utils';
+import {IconComponentProps} from '../../utils';
 
 export interface InputProps extends TextInputMaskProps {
   /**

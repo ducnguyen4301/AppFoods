@@ -6,7 +6,12 @@ import Helper from '@utils/helpers';
 import React from 'react';
 import {ActivityIndicator, Pressable, StyleSheet} from 'react-native';
 import Block from '../Block';
-import {createDefaultStyle, handleGutter, isIcon, isUndefined} from '../utils';
+import {
+  createDefaultStyle,
+  handleGutter,
+  isIcon,
+  isUndefined,
+} from '../../utils';
 import {ButtonProps} from './types';
 
 const Button: React.FC<ButtonProps> = props => {
@@ -117,9 +122,9 @@ const Button: React.FC<ButtonProps> = props => {
           )}
           {title && (
             <Text
-              fontType="bold"
+              fontType="regular"
               color={type === 'primary' ? 'white' : 'primary'}
-              size={14}
+              size={16}
               {...titleProps}>
               {title}
             </Text>
