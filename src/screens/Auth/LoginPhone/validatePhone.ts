@@ -1,5 +1,7 @@
 import {object, string} from 'yup';
-import {phoneRegExp} from '@utils/constants';
+import {PHONE_REGEX} from '@utils/constants';
 export const loginPhone = object().shape({
-  phone: string().matches(phoneRegExp, 'Phone number is not valid').required(),
+  phoneNumber: string()
+    .matches(PHONE_REGEX, 'Phone number is not valid')
+    .required(),
 });

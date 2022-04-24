@@ -10,7 +10,7 @@ import {TouchableOpacity} from 'react-native';
 import styles from './styles';
 
 type LoginPhoneProps = {
-  onSubmit: (values: {phone: number}) => void;
+  onSubmit: (values: {phoneNumber: number}) => void;
 };
 
 const LoginPhone = ({onSubmit}: LoginPhoneProps) => {
@@ -41,7 +41,7 @@ const LoginPhone = ({onSubmit}: LoginPhoneProps) => {
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={() => navigate('LoginScreen')}>
-          <Text color="#1877f2">{t('Đăng nhập bằng Mật Khẩu')}</Text>
+          <Text color={Colors.primary}>{t('Đăng nhập bằng Mật Khẩu')}</Text>
         </TouchableOpacity>
       </Block>
       <Block height={34} />

@@ -32,9 +32,9 @@ const RecoveryForm = ({onSubmit}: RecoveryFormProps) => {
       />
       <Block height={34} />
       <Button
-        title="Gửi yêu cầu"
-        onPress={handleSubmit(() => onSubmit({email: ''}))}
-        backgroundColor="white"
+        title="Tiếp tục"
+        onPress={handleSubmit(onSubmit as any)}
+        disabledBackground={Colors.secondaryText}
         disabled={!isValid}
       />
     </Block>

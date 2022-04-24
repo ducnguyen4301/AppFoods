@@ -36,8 +36,14 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Cần truy cập camera để thay đổi ảnh đại diện</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Cần truy cập albums để thay đổi ảnh đại diện</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Cần truy cập albums để thay đổi ảnh đại diện</string>
 		<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
