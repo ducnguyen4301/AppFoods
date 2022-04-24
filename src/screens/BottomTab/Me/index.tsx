@@ -1,4 +1,4 @@
-import {Alert, Dimensions, SafeAreaView} from 'react-native';
+import {Alert, Dimensions, SafeAreaView, Text} from 'react-native';
 import React from 'react';
 import '@i18n';
 import {useTranslation} from 'react-i18next';
@@ -6,13 +6,28 @@ import {MenuItem} from '@components/ProfileUser';
 import {Block, Button} from '@components';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
+import {CustomIcon} from '@assets/icons';
+import styles from './styles';
 const {width} = Dimensions.get('screen');
 const Me = () => {
   const {Colors} = useTheme();
   const {t} = useTranslation('Me');
   return (
-    <SafeAreaView>
-      <Block>
+    <SafeAreaView style={styles.screenContainer}>
+      <Block style={styles.bodyContainer}>
+        <Block style={styles.userContainer}>
+          <Block style={styles.avatarContainer}>
+            <CustomIcon name="user-o" size={26} color={Colors.whiteSmoke} />
+          </Block>
+          <Block style={styles.textContainer}>
+            <Text style={styles.welcomeText}>
+              Chào mừng bạn đến với FoodCome
+            </Text>
+            <Text style={styles.authText}>Đăng nhập/Đăng ký</Text>
+          </Block>
+          <CustomIcon name="chevron-right" size={26} color={Colors.orange} />
+        </Block>
+        {/*  */}
         <MenuItem
           title={t('Ví Voucher')}
           icon={{
@@ -55,7 +70,7 @@ const Me = () => {
           }}
         />
         <MenuItem
-          title={t('Trung tập trợ giúp')}
+          title={t('Trung tâm trợ giúp')}
           icon={{
             color: Colors.green,
             name: 'questioncircleo',
