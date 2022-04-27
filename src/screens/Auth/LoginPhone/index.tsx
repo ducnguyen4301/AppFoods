@@ -15,7 +15,7 @@ const LoginScreen = () => {
   const navigation = useNavigation();
   const {Colors} = useTheme();
   const dispatch = useDispatch();
-  const _loginAccount = (values: {phone: number}) => {
+  const _loginAccount = (values: {phoneNumber: number}) => {
     dispatch(loginPhone(values));
   };
 

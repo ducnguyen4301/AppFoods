@@ -1,18 +1,50 @@
-import {Alert, Dimensions, SafeAreaView} from 'react-native';
+import {Alert, Dimensions, ScrollView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import '@i18n';
 import {useTranslation} from 'react-i18next';
 import {MenuItem} from '@components/ProfileUser';
-import {Block, Button} from '@components';
+import {Block, Button, Text} from '@components';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
+import {CustomIcon} from '@assets/icons';
+import styles from './styles';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {navigate} from 'navigation/NavigationServices';
 const {width} = Dimensions.get('screen');
 const Me = () => {
+  const BASE_VERSIONAPP = '1.0.0';
+  const {top} = useSafeAreaInsets();
   const {Colors} = useTheme();
   const {t} = useTranslation('Me');
   return (
-    <SafeAreaView>
+    <ScrollView bounces={false}>
       <Block>
+        <Block
+          padding={{top: top * 2, horizontal: 10, vertical: 2}}
+          align="center"
+          row
+          backgroundColor={Colors.orangeJuice}>
+          <Block
+            width={50}
+            height={50}
+            radius={25}
+            align="center"
+            justify="center"
+            backgroundColor={Colors.white}
+            margin={{vertical: 12}}>
+            <CustomIcon name="user" size={35} color={Colors.orangeJuice} />
+          </Block>
+          <Block flex row align="center" justify="flex-end">
+            <Block>
+              <TouchableOpacity
+                style={styles.btnLogin}
+                onPress={() => navigate('LoginPhone')}>
+                <Text color={Colors.orangeJuice}>Đăng nhập/Đăng ký</Text>
+              </TouchableOpacity>
+            </Block>
+          </Block>
+        </Block>
+        {/*  */}
         <MenuItem
           title={t('Ví Voucher')}
           icon={{
@@ -55,7 +87,7 @@ const Me = () => {
           }}
         />
         <MenuItem
-          title={t('Trung tập trợ giúp')}
+          title={t('Trung tâm trợ giúp')}
           icon={{
             color: Colors.green,
             name: 'questioncircleo',
@@ -98,7 +130,7 @@ const Me = () => {
             size: getSize.s(22),
           }}
         />
-        <Block height={getSize.v(width)} backgroundColor="blueSmoke">
+        <Block height={getSize.v(width / 2.8)} backgroundColor="blueSmoke">
           <Block margin={{horizontal: 16, vertical: 20}}>
             <Button
               title="Đăng xuất"
@@ -117,9 +149,15 @@ const Me = () => {
               }}
             />
           </Block>
+          <Block justify="center" align="center" row>
+            <Text color={Colors.secondaryText} padding={5}>
+              {t('Phiên bản')}
+            </Text>
+            <Text color={Colors.secondaryText}>{BASE_VERSIONAPP}</Text>
+          </Block>
         </Block>
       </Block>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 

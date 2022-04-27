@@ -31,7 +31,10 @@ const ForgotPass = () => {
               size={getSize.s(60)}
               color={Colors.orangeJuice}
             />
-            <Text margin={{vertical: 50}} size={28} color="white">
+            <Text
+              margin={{vertical: 50}}
+              size={28}
+              color={Colors.secondaryText}>
               Khôi phục mật khẩu
             </Text>
           </Block>

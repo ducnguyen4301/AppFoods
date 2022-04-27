@@ -3,7 +3,7 @@ export interface LoginRequest {
   password: string;
 }
 export interface LoginRequestPhone {
-  phone: number;
+  phoneNumber: number;
 }
 export interface UserState {
   isLoading: boolean;
@@ -11,16 +11,15 @@ export interface UserState {
   isAuth: boolean;
 }
 export interface AuthResponse {
-  //   avatarUrl: string;
-  //   email: string;
-  //   emailNotVerified: string;
-  //   fullName: string;
-  //   gender: 'FEMALE' | 'MALE';
-  //   phoneNumber: string;
-  //   status: 'ACTIVE' | 'DISABLED' | 'NEW_USER' | 'NOT_ACTIVE';
-  //   token: string;
-  //   userRole: 'ADMIN' | 'CUSTOMER' | 'MANAGER';
   username: string;
+  avatarUrl: string;
+  email: string;
+  emailNotVerified: string;
+  gender: 'FEMALE' | 'MALE';
+  phoneNumber: string;
+  status: 'ACTIVE' | 'DISABLED' | 'NEW_USER' | 'NOT_ACTIVE';
+  token: string;
+  userRole: 'ADMIN' | 'CUSTOMER' | 'MANAGER';
 }
 export interface SignUpRequest {
   email: string;

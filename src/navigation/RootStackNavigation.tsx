@@ -29,6 +29,7 @@ const RootStackNavigation = () => {
 
   const defaultOptions = ({}: any) => ({
     title: '',
+    headerShown: false,
     headerTitleAllowFontScaling: false,
     headerTitleStyle: {
       ...Fonts.bold,
