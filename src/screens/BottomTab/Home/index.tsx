@@ -8,7 +8,7 @@ import {CustomIcon} from '@assets/icons';
 import {Colors} from '@theme/color';
 import {Block, Text} from '@components';
 import Header from '@components/Home/Header';
-
+import {Carousel} from '@components/Home';
 const Home = () => {
   const {t} = useTranslation('Home');
   return (
@@ -42,6 +42,7 @@ const Home = () => {
         style={styles.header}>
         <Header onTextChange={() => {}} />
       </Block>
+      <Carousel />
     </SafeAreaView>
   );
 };
