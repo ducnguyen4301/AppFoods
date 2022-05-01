@@ -1,25 +1,25 @@
-import localImages from '@assets';
+// import localImages from '@assets';
 
 const banners = [
   {
     id: '9471645183',
-    imageUrl: localImages().flashsale,
+    imageURL: require('@assets/images/flashsale1.jpg'),
   },
   {
     id: '5656210978',
-    imageUrl: localImages().flashsale1,
+    imageURL: require('@assets/images/flashsale1.jpg'),
   },
   {
     id: '044416421',
-    imageUrl: localImages().flashsale,
+    imageURL: require('@assets/images/flashsale1.jpg'),
   },
   {
     id: '218716591',
-    imageUrl: localImages().flashsale1,
+    imageURL: require('@assets/images/flashsale1.jpg'),
   },
   {
     id: '218716523',
-    imageUrl: localImages().flashsale,
+    imageURL: require('../assets/images/flashsale.jpg'),
   },
 ];
 

@@ -5,12 +5,17 @@ import {useTranslation} from 'react-i18next';
 import {MenuItem} from '@components/ProfileUser';
 import {Colors} from '@theme/color';
 import {getSize} from '@utils/reponsive';
-import {Block, Text} from '@components';
+import {Block, HeaderTitle, Text} from '@components';
+import styles from './styles';
 const Notifications = () => {
   const {t} = useTranslation('Notification');
   return (
     <SafeAreaView>
-      <Text>{t('notify')}</Text>
+      <HeaderTitle
+        title="Thông báo"
+        showBorderBottom
+        titleStyle={styles.headerTitle}
+      />
       <MenuItem
         title={t('Khuyến mãi')}
         icon={{
@@ -27,7 +32,6 @@ const Notifications = () => {
           size: getSize.s(22),
         }}
       />
-
       <Block
         row
         align="center"

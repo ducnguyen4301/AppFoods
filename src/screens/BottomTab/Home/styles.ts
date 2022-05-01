@@ -10,4 +10,8 @@ export default StyleSheet.create({
   location: {
     fontFamily: 'BR Firma Bold',
   },
+  viewAll: {
+    flex: 1,
+    flexDirection: 'row',
+  },
 });
