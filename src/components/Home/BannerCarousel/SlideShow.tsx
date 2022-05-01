@@ -23,7 +23,7 @@ const Banner: React.FC<BannerProps> = () => {
         activeOpacity={0.8}
         style={styles.slideItem}>
         <Image
-          source={{uri: item.imageURL}}
+          source={require('../../../assets/images/flashsale.jpg')}
           style={styles.slideImg}
           resizeMode="cover"
         />
