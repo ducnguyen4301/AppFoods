@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({
         justify="center"
         padding={{horizontal: 16}}
         style={headerStyles}>
-        <Block top={0} left={16} right={0} bottom={0} justify="center">
+        <Block top={0} left={0} right={0} bottom={0} justify="center">
           <Text size={24} fontType="bold" style={titleStyle} lineHeight={36}>
             {title}
           </Text>
