@@ -19,4 +19,16 @@ export default StyleSheet.create({
     borderRadius: 2,
     paddingHorizontal: 5,
   },
+  header: {
+    display: 'flex',
+    height: getSize.v(50),
+    flexDirection: 'row',
+  },
+  location: {
+    fontFamily: 'BR Firma Bold',
+  },
+  viewAll: {
+    flex: 1,
+    flexDirection: 'row',
+  },
 });
