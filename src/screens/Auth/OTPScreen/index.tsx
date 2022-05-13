@@ -1,10 +1,10 @@
 import {View} from 'react-native';
 import React from 'react';
-import {OTPS} from '@components/Auth';
+import {OTPFields} from '@components/Auth';
 const OTPScreen = () => {
   return (
     <View>
-      <OTPS />
+      <OTPFields />
     </View>
   );
 };

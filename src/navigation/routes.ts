@@ -19,7 +19,7 @@ export const userScreens = {};
 export const notLoggedInScreens = {
   LoginScreen: Auth.LoginScreen,
   LoginPhone: Auth.LoginPhone,
-  OTP: Auth.OTPScreen,
+  OTPScreen: Auth.OTPScreen,
   ForgotPass: Auth.ForgotPassScreen,
 };
 /**

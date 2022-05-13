@@ -9,7 +9,7 @@ const inputs = Array(6).fill('');
 const arrOTP = Array(6).fill('');
 let newInputdex = 0;
 
-const OTPS = () => {
+const OTPFields = () => {
   const inputRef = useRef<any>(null);
   const {t} = useTranslation();
   const [OTP, setOTP] = useState(arrOTP);
@@ -84,4 +84,4 @@ const OTPS = () => {
   );
 };
 
-export default OTPS;
+export default OTPFields;

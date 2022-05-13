@@ -1,6 +1,6 @@
 import {Block, Button, FormInput, Text} from '@components';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {loginPhone} from '@screens/Auth/LoginPhone/validatePhone';
+import {phoneValidate} from '@screens/Auth/LoginPhone/validatePhone';
 import {useTheme} from '@theme';
 import {navigate} from 'navigation/NavigationServices';
 import React from 'react';
@@ -13,15 +13,16 @@ type LoginPhoneProps = {
   onSubmit: (values: {phoneNumber: number}) => void;
 };
 
-const LoginPhone = ({onSubmit}: LoginPhoneProps) => {
+const LoginOTP = ({onSubmit}: LoginPhoneProps) => {
   const {Colors} = useTheme();
   const {t} = useTranslation();
+
   const {
     control,
     handleSubmit,
     formState: {isValid},
   } = useForm({
-    resolver: yupResolver(loginPhone),
+    resolver: yupResolver(phoneValidate),
     mode: 'onChange',
   });
 
@@ -55,4 +56,4 @@ const LoginPhone = ({onSubmit}: LoginPhoneProps) => {
   );
 };
 
-export default LoginPhone;
+export default LoginOTP;

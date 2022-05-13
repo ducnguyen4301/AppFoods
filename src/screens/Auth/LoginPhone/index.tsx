@@ -5,12 +5,12 @@ import {getSize} from '@utils/reponsive';
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {LoginPhone} from '@components/Auth';
+import {LoginOTP} from '@components/Auth';
 import {useDispatch} from 'react-redux';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {loginPhone} from '@store/sagas/auth/slice';
-const LoginScreen = () => {
+const LoginPhone = () => {
   const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
   const {Colors} = useTheme();
@@ -30,7 +30,7 @@ const LoginScreen = () => {
             color={Colors.orangeJuice}
           />
         </Block>
-        <LoginPhone onSubmit={_loginAccount} />
+        <LoginOTP onSubmit={_loginAccount} />
         <Block align="center" row margin={{top: 50}} justify="center">
           <Text color="secondaryText" style={styles.orText}>
             ----------------------
@@ -67,4 +67,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default LoginPhone;
