@@ -1,5 +1,4 @@
 import {Block} from '@components';
-import Text from '@components/base/Text';
 import {getSize} from '@utils/reponsive';
 import banners from 'data/banner';
 import React, {useCallback, useMemo} from 'react';
@@ -15,7 +14,6 @@ const SEPARATOR_WIDTH = getSize.s(12);
 const Banner: React.FC<BannerProps> = () => {
   const itemWidth = useMemo(() => ITEM_WIDTH + SEPARATOR_WIDTH, []);
   const isLoading = false;
-  console.log(banners);
   const _renderSlide = useCallback(({item}: any) => {
     return (
       <TouchableOpacity
@@ -23,11 +21,10 @@ const Banner: React.FC<BannerProps> = () => {
         activeOpacity={0.8}
         style={styles.slideItem}>
         <Image
-          source={require('../../../assets/images/flashsale.jpg')}
+          source={item.imageURL}
           style={styles.slideImg}
-          resizeMode="cover"
+          resizeMode="stretch"
         />
-        <Text>{item.id}</Text>
       </TouchableOpacity>
     );
   }, []);
