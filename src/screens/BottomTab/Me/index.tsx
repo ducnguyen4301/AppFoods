@@ -52,6 +52,7 @@ const Me = () => {
             name: 'confirmation',
             size: getSize.s(22),
           }}
+          onPress={() => navigate('Voucher')}
         />
         <MenuItem
           title={t('FoodCome Xu')}
@@ -60,6 +61,7 @@ const Me = () => {
             name: 'payment',
             size: getSize.s(22),
           }}
+          onPress={() => navigate('')}
         />
         <MenuItem
           title={t('Thanh toán')}
@@ -68,6 +70,7 @@ const Me = () => {
             name: 'payment',
             size: getSize.s(22),
           }}
+          onPress={() => navigate('')}
         />
         <MenuItem
           title={t('Địa chỉ')}
@@ -76,6 +79,7 @@ const Me = () => {
             name: 'location-o',
             size: getSize.s(22),
           }}
+          onPress={() => navigate('')}
         />
         <Block height={10} backgroundColor="blueSmoke" />
         <MenuItem
@@ -85,6 +89,7 @@ const Me = () => {
             name: 'yell',
             size: getSize.s(22),
           }}
+          onPress={() => navigate('')}
         />
         <MenuItem
           title={t('Trung tâm trợ giúp')}
@@ -94,6 +99,7 @@ const Me = () => {
             size: getSize.s(22),
             type: 'antDesign',
           }}
+          onPress={() => navigate('')}
         />
         <Block height={10} backgroundColor="blueSmoke" />
         <MenuItem
@@ -103,6 +109,7 @@ const Me = () => {
             name: 'home',
             size: getSize.s(22),
           }}
+          onPress={() => navigate('')}
         />
         <Block height={10} backgroundColor="blueSmoke" />
         <MenuItem
@@ -112,6 +119,7 @@ const Me = () => {
             name: 'policy',
             size: getSize.s(22),
           }}
+          onPress={() => navigate('')}
         />
 
         <MenuItem
@@ -129,6 +137,7 @@ const Me = () => {
             name: 'home',
             size: getSize.s(22),
           }}
+          onPress={() => navigate('')}
         />
         <Block height={getSize.v(width / 2.8)} backgroundColor="blueSmoke">
           <Block margin={{horizontal: 16, vertical: 20}}>
@@ -141,7 +150,7 @@ const Me = () => {
                   [
                     {text: 'Huỷ'},
                     {
-                      text: 'Xác nhận',
+                      text: 'OK',
                       onPress: () => {},
                     },
                   ],
