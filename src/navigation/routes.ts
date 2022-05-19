@@ -11,7 +11,13 @@ export const commonScreens = {
 /**
  * Screens when user logged in
  */
-export const userScreens = {};
+export const userScreens = {
+  Home: BottomTab.Home,
+  MyOrder: BottomTab.MyOrder,
+  Likes: BottomTab.Likes,
+  Notify: BottomTab.Notify,
+  Me: BottomTab.Me,
+};
 
 /**
  * Screens user when user not logged in

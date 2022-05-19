@@ -108,7 +108,7 @@ const Helper = {
           yield call(configs.customError, err);
         }
         if (err.error === 'Unauthorized') {
-          Alert.alert('aaaaa');
+          Alert.alert('dang nhap that bai');
         }
         if (!configs?.hideAlert) {
           if (err.message === 'Network Error') {

@@ -21,8 +21,10 @@ const RootStack = createStackNavigator<RootStackRoutes>();
 
 const RootStackNavigation = () => {
   const {Fonts, Colors} = useTheme();
+  //const Auth = getIsAuth({auth: {isAuth: true, user: 'aaa', isLoading: true}});
   const isAuth = useSelector(getIsAuth);
-  console.log(isAuth);
+  //console.log('get auth :  ' + Auth);
+  console.log('get auth 2 : ' + isAuth);
 
   const screenOptions: ScreenOptions<RootStackRoutes, StackNavigationOptions> =
     {BottomTab: {headerShown: false}};

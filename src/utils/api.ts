@@ -1,9 +1,10 @@
 import axios, {AxiosRequestConfig} from 'axios';
-//import Config from 'react-native-config';
+import Config from 'react-native-config';
 import {get} from 'lodash';
 const baseURL = 'https://fakestoreapi.com';
 const headers: {[k: string]: string} = {};
-// const apiServerUrl = Config.API_SERVER_URL;
+//const apiServerUrl = Config.API_SERVER_URL;
+console.log('config' + Config);
 
 const getAxiosInstance = async () => {
   const axiosInstance = axios.create({

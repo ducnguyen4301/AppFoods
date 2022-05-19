@@ -28,7 +28,9 @@ const UserInfo: React.FC<UserProps> = ({info}) => {
     <Block padding={{vertical: 24, horizontal: 16}} row align="center">
       <TouchableOpacity activeOpacity={0.8} onPress={onPressAvatar}>
         <Image
-          source={info?.avatarUrl ? {uri: info?.avatarUrl} : images.logo}
+          source={
+            info?.avatarUrl ? {uri: info?.avatarUrl} : images.default_user
+          }
           style={styles.avatar}
           resizeMode="cover"
         />
@@ -38,7 +40,7 @@ const UserInfo: React.FC<UserProps> = ({info}) => {
           {info?.username}
         </Text>
         <Text margin={{top: 4}} color="white">
-          {info.email}
+          {info?.email}
         </Text>
       </Block>
     </Block>

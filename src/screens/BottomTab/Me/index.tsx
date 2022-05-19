@@ -2,16 +2,17 @@ import {Alert, Dimensions, ScrollView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import '@i18n';
 import {useTranslation} from 'react-i18next';
-import {MenuItem} from '@components/ProfileUser';
+import {MenuItem, UserInfo} from '@components/ProfileUser';
 import {Block, Button, Text} from '@components';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
-import {CustomIcon} from '@assets/icons';
 import styles from './styles';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {navigate} from 'navigation/NavigationServices';
+import {useSelector} from 'react-redux';
 const {width} = Dimensions.get('screen');
 const Me = () => {
+  const {userInfo} = useSelector((state: any) => state.auth);
   const BASE_VERSIONAPP = '1.0.0';
   const {top} = useSafeAreaInsets();
   const {Colors} = useTheme();
@@ -24,15 +25,8 @@ const Me = () => {
           align="center"
           row
           backgroundColor={Colors.orangeJuice}>
-          <Block
-            width={50}
-            height={50}
-            radius={25}
-            align="center"
-            justify="center"
-            backgroundColor={Colors.white}
-            margin={{vertical: 12}}>
-            <CustomIcon name="user" size={35} color={Colors.orangeJuice} />
+          <Block>
+            <UserInfo info={userInfo} />
           </Block>
           <Block flex row align="center" justify="flex-end">
             <Block>
@@ -44,6 +38,7 @@ const Me = () => {
             </Block>
           </Block>
         </Block>
+
         {/*  */}
         <MenuItem
           title={t('Ví Voucher')}
