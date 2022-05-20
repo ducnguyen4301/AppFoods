@@ -3,13 +3,14 @@ import {Block, IconComponent, Text, FormContainer} from '@components';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, Image} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 //import {useDispatch} from 'react-redux';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 //import {recoveryAccount} from '@store/sagas/auth/slice';
 import {RecoveryForm} from '@components/Auth';
+import localImages from '@assets';
 const ForgotPass = () => {
   const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
@@ -25,12 +26,7 @@ const ForgotPass = () => {
       <FormContainer>
         <Block flexGrow style={{paddingTop: top}}>
           <Block margin={{top: 84}} align="center">
-            <IconComponent
-              name="logo"
-              type="custom"
-              size={getSize.s(60)}
-              color={Colors.orangeJuice}
-            />
+            <Image source={localImages().logo} />
             <Text
               margin={{vertical: 50}}
               size={28}

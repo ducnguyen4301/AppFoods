@@ -3,3 +3,7 @@ export {default as MyOrder} from './Orders';
 export {default as Likes} from './Likes';
 export {default as Notify} from './Notifications';
 export {default as Me} from './Me';
+export {default as AboutScreen} from './Me/About';
+export {default as VoucherScreen} from './Me/Voucher';
+export {default as LocationScreen} from './Me/Location';
+export {default as AddNewLocationScreen} from './Me/Location/AddNewLocation';

@@ -17,6 +17,9 @@ export const userScreens = {
   Likes: BottomTab.Likes,
   Notify: BottomTab.Notify,
   Me: BottomTab.Me,
+  About: BottomTab.AboutScreen,
+  Voucher: BottomTab.VoucherScreen,
+  Location: BottomTab.LocationScreen,
 };
 
 /**
@@ -27,6 +30,10 @@ export const notLoggedInScreens = {
   LoginPhone: Auth.LoginPhone,
   OTPScreen: Auth.OTPScreen,
   ForgotPass: Auth.ForgotPassScreen,
+  AboutScreen: BottomTab.AboutScreen,
+  Voucher: BottomTab.VoucherScreen,
+  Location: BottomTab.LocationScreen,
+  AddNewLocation: BottomTab.AddNewLocationScreen,
 };
 /**
  * Modal

@@ -3,13 +3,14 @@ import {Block, IconComponent, Text} from '@components';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {Image, TouchableOpacity} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {LoginOTP} from '@components/Auth';
 import {useDispatch} from 'react-redux';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {loginPhone} from '@store/sagas/auth/slice';
+import localImages from '@assets';
 const LoginPhone = () => {
   const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
@@ -23,12 +24,7 @@ const LoginPhone = () => {
     <Block style={styles.container}>
       <Block flexGrow style={{paddingTop: top}}>
         <Block margin={{vertical: 26, top: 84}} align="center">
-          <IconComponent
-            name="logo"
-            type="custom"
-            size={getSize.s(60)}
-            color={Colors.orangeJuice}
-          />
+          <Image source={localImages().logo} />
         </Block>
         <LoginOTP onSubmit={_loginAccount} />
         <Block align="center" row margin={{top: 50}} justify="center">

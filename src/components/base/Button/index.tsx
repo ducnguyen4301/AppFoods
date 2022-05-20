@@ -122,7 +122,7 @@ const Button: React.FC<ButtonProps> = props => {
           )}
           {title && (
             <Text
-              fontType="regular"
+              fontType="demiBold"
               color={type === 'primary' ? 'white' : 'primary'}
               size={16}
               {...titleProps}>
@@ -172,7 +172,7 @@ const getDefaultButtonStyles = ({
 }: IProps) => {
   let buttonDefaultStyle: any = {
     borderRadius: 8,
-    backgroundColor: pressed ? Colors.orangeJuice : Colors.orange,
+    backgroundColor: pressed ? Colors.orange : Colors.orangeJuice,
   };
   if (type === 'text' || type === 'outline') {
     buttonDefaultStyle.backgroundColor = 'transparent';

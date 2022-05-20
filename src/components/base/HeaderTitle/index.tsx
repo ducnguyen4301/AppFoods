@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const headerStyles: any = [
     showBorderBottom && {
-      borderBottomWidth: 1,
+      borderBottomWidth: 1.5,
       borderBottomColor: '#eeeeee',
     },
     StyleSheet.flatten(containerStyle),

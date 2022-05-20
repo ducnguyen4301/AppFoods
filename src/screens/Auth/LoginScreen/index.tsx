@@ -2,13 +2,14 @@ import {Block, Text, IconComponent, FormContainer} from '@components';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, Image} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {LoginForm} from '@components/Auth';
 import {useDispatch} from 'react-redux';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {login} from '@store/sagas/auth/slice';
+import localImages from '@assets';
 const LoginScreen = () => {
   const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
@@ -23,12 +24,7 @@ const LoginScreen = () => {
       <FormContainer>
         <Block flexGrow style={{paddingTop: top}}>
           <Block margin={{vertical: 26, top: 84}} align="center">
-            <IconComponent
-              name="logo"
-              type="custom"
-              size={getSize.s(60)}
-              color={Colors.orangeJuice}
-            />
+            <Image source={localImages().logo} />
           </Block>
           <LoginForm onSubmit={_loginAccount} />
           <Block align="center" row margin={{top: 50}} justify="center">

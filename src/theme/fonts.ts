@@ -6,7 +6,7 @@ export const Fonts: ThemeFontWeight = {
     fontFamily: 'Bozon Regular',
   },
   demiBold: {
-    fontWeight: 'bold',
+    fontWeight: '500',
     fontFamily: 'Bozon Demi Bold',
   },
   bold: {

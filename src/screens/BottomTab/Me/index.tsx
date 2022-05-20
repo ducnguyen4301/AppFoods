@@ -21,7 +21,7 @@ const Me = () => {
     <ScrollView bounces={false}>
       <Block>
         <Block
-          padding={{top: top * 2, horizontal: 10, vertical: 2}}
+          padding={{top: top, horizontal: 10, vertical: 2}}
           align="center"
           row
           backgroundColor={Colors.orangeJuice}>
@@ -74,7 +74,7 @@ const Me = () => {
             name: 'location-o',
             size: getSize.s(22),
           }}
-          onPress={() => navigate('')}
+          onPress={() => navigate('Location')}
         />
         <Block height={10} backgroundColor="blueSmoke" />
         <MenuItem
@@ -132,7 +132,7 @@ const Me = () => {
             name: 'home',
             size: getSize.s(22),
           }}
-          onPress={() => navigate('')}
+          onPress={() => navigate('AboutScreen')}
         />
         <Block height={getSize.v(width / 2.8)} backgroundColor="blueSmoke">
           <Block margin={{horizontal: 16, vertical: 20}}>

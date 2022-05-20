@@ -1,6 +1,6 @@
 function localImages() {
   return {
-    logo: require('./images/logo.png'),
+    logo: require('./images/logo1.png'),
     logo1: require('./images/goodFood.jpg'),
     default_user: require('./images/default_user.jpg'),
     flashsale: require('./images/flashsale.jpg'),
