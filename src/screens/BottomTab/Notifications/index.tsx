@@ -7,14 +7,22 @@ import {Colors} from '@theme/color';
 import {getSize} from '@utils/reponsive';
 import {Block, HeaderTitle, Text} from '@components';
 import styles from './styles';
+import {navigate} from 'navigation/NavigationServices';
 const Notifications = () => {
   const {t} = useTranslation('Notification');
   return (
     <SafeAreaView>
       <HeaderTitle
-        title="Thông báo"
         showBorderBottom
         titleStyle={styles.headerTitle}
+        title="Thông báo"
+        headerRightIcon={{
+          name: 'setting',
+          type: 'custom',
+          color: 'orange',
+          size: 15,
+        }}
+        onHeaderRightPress={() => navigate('Me')}
       />
       <MenuItem
         title={t('Khuyến mãi')}

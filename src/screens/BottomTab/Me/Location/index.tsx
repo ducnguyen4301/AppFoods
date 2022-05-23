@@ -3,10 +3,12 @@ import {MenuItem} from '@components/Me';
 import {useTranslation} from 'react-i18next';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
-import {Block, Button, HeaderTitle} from '@components';
-import {navigate} from 'navigation/NavigationServices';
+import {Block, Button, HeaderTitle, Text} from '@components';
+import {goBack, navigate} from 'navigation/NavigationServices';
 import styles from './styles';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {CustomIcon} from '@assets/icons';
+import {TouchableOpacity} from 'react-native';
 
 const Location = () => {
   const {t} = useTranslation();
@@ -14,7 +16,22 @@ const Location = () => {
   const {top, bottom} = useSafeAreaInsets();
   return (
     <Block style={[styles.container, {paddingTop: top}]}>
-      <HeaderTitle title={t('Địa chỉ')} />
+      <HeaderTitle
+        headerLeft={
+          <Block row align="center" justify="center">
+            <Block padding={{right: 10}}>
+              <TouchableOpacity onPress={() => goBack()}>
+                <CustomIcon
+                  name="chevron-left"
+                  size={20}
+                  color={Colors.orangeJuice}
+                />
+              </TouchableOpacity>
+            </Block>
+            <Text size={20}>{t('Địa chỉ')}</Text>
+          </Block>
+        }
+      />
       <Block flex backgroundColor={Colors.gray}>
         <Block backgroundColor={Colors.white}>
           <MenuItem
