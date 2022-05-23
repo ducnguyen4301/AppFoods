@@ -5,7 +5,7 @@ import styles from './styles';
 import {useTheme} from '@theme';
 import {useTranslation} from 'react-i18next';
 import {CustomIcon} from '@assets/icons';
-import {MenuItem} from '@components/ProfileUser';
+import {MenuItem} from '@components/Me';
 import localImages from '@assets';
 import FastImage from 'react-native-fast-image';
 

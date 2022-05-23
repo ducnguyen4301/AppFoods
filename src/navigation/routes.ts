@@ -34,6 +34,13 @@ export const notLoggedInScreens = {
   Voucher: BottomTab.VoucherScreen,
   Location: BottomTab.LocationScreen,
   AddNewLocation: BottomTab.AddNewLocationScreen,
+  Profile: BottomTab.ProfileScreen,
+  UpdateImage: BottomTab.UpdateImageScreen,
+  UpdateUserName: BottomTab.UpdateUserNameScreen,
+  UpdatePhone: BottomTab.UpdatePhoneScreen,
+  UpdateEmail: BottomTab.UpdateEmailScreen,
+  UpdateJob: BottomTab.UpdateJobScreen,
+  Settings: BottomTab.SettingScreen,
 };
 /**
  * Modal

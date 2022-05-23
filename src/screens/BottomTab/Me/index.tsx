@@ -1,18 +1,23 @@
-import {Alert, Dimensions, ScrollView, TouchableOpacity} from 'react-native';
+import {
+  Alert,
+  Dimensions,
+  ScrollView,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import React from 'react';
 import '@i18n';
 import {useTranslation} from 'react-i18next';
-import {MenuItem, UserInfo} from '@components/ProfileUser';
+import {MenuItem} from '@components/Me';
 import {Block, Button, Text} from '@components';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
 import styles from './styles';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {navigate} from 'navigation/NavigationServices';
-import {useSelector} from 'react-redux';
+import localImages from '@assets';
 const {width} = Dimensions.get('screen');
 const Me = () => {
-  const {userInfo} = useSelector((state: any) => state.auth);
   const BASE_VERSIONAPP = '1.0.0';
   const {top} = useSafeAreaInsets();
   const {Colors} = useTheme();
@@ -25,8 +30,16 @@ const Me = () => {
           align="center"
           row
           backgroundColor={Colors.orangeJuice}>
-          <Block>
-            <UserInfo info={userInfo} />
+          <Block padding={{vertical: 24, horizontal: 16}} row align="center">
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => navigate('Profile')}>
+              <Image
+                source={localImages().default_user}
+                style={styles.avatar}
+                resizeMode="cover"
+              />
+            </TouchableOpacity>
           </Block>
           <Block flex row align="center" justify="flex-end">
             <Block>
@@ -124,6 +137,7 @@ const Me = () => {
             name: 'setting',
             size: getSize.s(22),
           }}
+          onPress={() => navigate('Settings')}
         />
         <MenuItem
           title={t('Về FoodCome')}

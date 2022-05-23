@@ -1,5 +1,5 @@
 import React from 'react';
-import {MenuItem} from '@components/ProfileUser';
+import {MenuItem} from '@components/Me';
 import {useTranslation} from 'react-i18next';
 import {useTheme} from '@theme';
 import {getSize} from '@utils/reponsive';
@@ -11,7 +11,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 const Location = () => {
   const {t} = useTranslation();
   const {Colors} = useTheme();
-  const {top} = useSafeAreaInsets();
+  const {top, bottom} = useSafeAreaInsets();
   return (
     <Block style={[styles.container, {paddingTop: top}]}>
       <HeaderTitle title={t('Địa chỉ')} />
@@ -53,8 +53,12 @@ const Location = () => {
       <Block
         padding={10}
         backgroundColor={Colors.white}
+        margin={{bottom: bottom}}
         border={{top: {color: Colors.border, width: 0.5}}}>
-        <Button title={t('Thêm địa chỉ mới')} onPress={() => {}} />
+        <Button
+          title={t('Thêm địa chỉ mới')}
+          onPress={() => navigate('AddNewLocation')}
+        />
       </Block>
     </Block>
   );
