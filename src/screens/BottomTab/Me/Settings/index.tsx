@@ -4,7 +4,7 @@ import {Block, HeaderTitle, Text} from '@components';
 import {MenuItem} from '@components/Me';
 import {useTranslation} from 'react-i18next';
 import {CustomIcon} from '@assets/icons';
-import {goBack} from 'navigation/NavigationServices';
+import {goBack, navigate} from 'navigation/NavigationServices';
 import {useTheme} from '@theme';
 
 const Settings = () => {
@@ -39,6 +39,7 @@ const Settings = () => {
             name: undefined,
             type: undefined,
           }}
+          onPress={() => navigate('Profile')}
         />
         <MenuItem
           title={t('Mật khẩu')}
@@ -48,6 +49,7 @@ const Settings = () => {
             name: undefined,
             type: undefined,
           }}
+          onPress={() => navigate('Password')}
         />
       </Block>
       <Block height={30} />

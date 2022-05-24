@@ -16,3 +16,4 @@ export {default as UpdateJobScreen} from './Me/Profile/UpdateJob';
 export {default as UpdateUserNameScreen} from './Me/Profile/UpdateUserName';
 export {default as InviteScreen} from './Me/Invite';
 export {default as SettingScreen} from './Me/Settings';
+export {default as PasswordScreen} from './Me/Settings/PassWord';

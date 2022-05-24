@@ -43,6 +43,7 @@ export const notLoggedInScreens = {
   UpdateJob: BottomTab.UpdateJobScreen,
   Invite: BottomTab.InviteScreen,
   Settings: BottomTab.SettingScreen,
+  Password: BottomTab.PasswordScreen,
 };
 /**
  * Modal
