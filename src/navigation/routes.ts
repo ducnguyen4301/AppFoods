@@ -34,12 +34,14 @@ export const notLoggedInScreens = {
   Voucher: BottomTab.VoucherScreen,
   Location: BottomTab.LocationScreen,
   AddNewLocation: BottomTab.AddNewLocationScreen,
+  UpdateLocation: BottomTab.UpdateLocationScreen,
   Profile: BottomTab.ProfileScreen,
   UpdateImage: BottomTab.UpdateImageScreen,
   UpdateUserName: BottomTab.UpdateUserNameScreen,
   UpdatePhone: BottomTab.UpdatePhoneScreen,
   UpdateEmail: BottomTab.UpdateEmailScreen,
   UpdateJob: BottomTab.UpdateJobScreen,
+  Invite: BottomTab.InviteScreen,
   Settings: BottomTab.SettingScreen,
 };
 /**

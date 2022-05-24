@@ -1,17 +1,34 @@
 import React from 'react';
-import {Block, HeaderTitle} from '@components';
+import {Block, HeaderTitle, Text} from '@components';
 import {MenuProfile} from '@components/Me';
-import {navigate} from 'navigation/NavigationServices';
+import {goBack, navigate} from 'navigation/NavigationServices';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import styles from './styles';
+import {TouchableOpacity} from 'react-native';
+import {CustomIcon} from '@assets/icons';
+import {useTheme} from '@theme';
+import {useTranslation} from 'react-i18next';
 
 const ProfileScreen = () => {
   const {top} = useSafeAreaInsets();
+  const {Colors} = useTheme();
+  const {t} = useTranslation();
   return (
     <Block padding={{top: top}}>
       <HeaderTitle
-        title="Thông tin người dùng"
-        titleStyle={styles.headerTile}
+        headerLeft={
+          <Block row align="center" justify="center">
+            <Block padding={{right: 10}}>
+              <TouchableOpacity onPress={() => goBack()}>
+                <CustomIcon
+                  name="chevron-left"
+                  size={20}
+                  color={Colors.orangeJuice}
+                />
+              </TouchableOpacity>
+            </Block>
+            <Text size={20}>{t('Thông tin người dùng')}</Text>
+          </Block>
+        }
       />
       <Block height={10} />
       <MenuProfile

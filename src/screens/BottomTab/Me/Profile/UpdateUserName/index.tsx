@@ -1,17 +1,33 @@
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {Block, Button, HeaderTitle} from '@components';
+import {Block, Button, HeaderTitle, Text} from '@components';
 import {useTranslation} from 'react-i18next';
 import {MenuUpdateProfile} from '@components/Me';
-import {navigate} from 'navigation/NavigationServices';
+import {goBack, navigate} from 'navigation/NavigationServices';
 import {useTheme} from '@theme';
+import {CustomIcon} from '@assets/icons';
 
 const UpdateUserName = () => {
   const {t} = useTranslation();
   const {Colors} = useTheme();
   return (
     <SafeAreaView>
-      <HeaderTitle title={t('Tên')} />
+      <HeaderTitle
+        headerLeft={
+          <Block row align="center" justify="center">
+            <Block padding={{right: 10}}>
+              <TouchableOpacity onPress={() => goBack()}>
+                <CustomIcon
+                  name="chevron-left"
+                  size={20}
+                  color={Colors.orangeJuice}
+                />
+              </TouchableOpacity>
+            </Block>
+            <Text size={20}>{t('Tên')}</Text>
+          </Block>
+        }
+      />
       <Block height={10} />
       <Block>
         <MenuUpdateProfile

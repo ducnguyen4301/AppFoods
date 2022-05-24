@@ -62,7 +62,7 @@ const Location = () => {
               size: getSize.s(18),
               type: 'materialIcons',
             }}
-            onPress={() => navigate('AddNewLocation')}
+            onPress={() => navigate('UpdateLocation')}
             locationType="bookmark"
           />
         </Block>

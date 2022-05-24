@@ -19,8 +19,8 @@ const Notifications = () => {
         headerRightIcon={{
           name: 'setting',
           type: 'custom',
-          color: 'orange',
-          size: 15,
+          color: 'primaryText',
+          size: 22,
         }}
         onHeaderRightPress={() => navigate('Me')}
       />

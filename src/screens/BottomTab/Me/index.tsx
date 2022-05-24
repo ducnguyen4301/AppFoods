@@ -97,7 +97,7 @@ const Me = () => {
             name: 'yell',
             size: getSize.s(22),
           }}
-          onPress={() => navigate('')}
+          onPress={() => navigate('Invite')}
         />
         <MenuItem
           title={t('Trung tâm trợ giúp')}

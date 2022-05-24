@@ -1,17 +1,33 @@
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Block, Button, HeaderTitle, Text} from '@components';
 import {MenuUpdateProfile} from '@components/Me';
-import {navigate} from 'navigation/NavigationServices';
+import {goBack, navigate} from 'navigation/NavigationServices';
 import {useTranslation} from 'react-i18next';
 import {useTheme} from '@theme';
+import {CustomIcon} from '@assets/icons';
 
 const UpdateEmail = () => {
   const {t} = useTranslation();
   const {Colors} = useTheme();
   return (
     <SafeAreaView>
-      <HeaderTitle title={t('Email')} />
+      <HeaderTitle
+        headerLeft={
+          <Block row align="center" justify="center">
+            <Block padding={{right: 10}}>
+              <TouchableOpacity onPress={() => goBack()}>
+                <CustomIcon
+                  name="chevron-left"
+                  size={20}
+                  color={Colors.orangeJuice}
+                />
+              </TouchableOpacity>
+            </Block>
+            <Text size={20}>{t('Email')}</Text>
+          </Block>
+        }
+      />
       <Block padding={{top: 15, bottom: 4, horizontal: 10}}>
         <Text size={12} color="secondaryText">
           {t(

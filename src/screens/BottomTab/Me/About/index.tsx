@@ -1,4 +1,4 @@
-import {Linking, SafeAreaView} from 'react-native';
+import {Linking, SafeAreaView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Block, HeaderTitle, Text} from '@components';
 import styles from './styles';
@@ -8,6 +8,7 @@ import {CustomIcon} from '@assets/icons';
 import {MenuItem} from '@components/Me';
 import localImages from '@assets';
 import FastImage from 'react-native-fast-image';
+import {goBack} from 'navigation/NavigationServices';
 
 const AboutScreen = () => {
   const {t} = useTranslation();
@@ -18,8 +19,20 @@ const AboutScreen = () => {
   return (
     <SafeAreaView>
       <HeaderTitle
-        title="Ve FoodCome"
-        titleStyle={styles.headerTitle}
+        headerLeft={
+          <Block row align="center" justify="center">
+            <Block padding={{right: 10}}>
+              <TouchableOpacity onPress={() => goBack()}>
+                <CustomIcon
+                  name="chevron-left"
+                  size={20}
+                  color={Colors.orangeJuice}
+                />
+              </TouchableOpacity>
+            </Block>
+            <Text size={20}>{t('Địa chỉ')}</Text>
+          </Block>
+        }
         showBorderBottom
       />
       <Block backgroundColor={Colors.white}>

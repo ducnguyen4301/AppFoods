@@ -1,14 +1,33 @@
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Block, HeaderTitle, Text} from '@components';
 import {MenuItem} from '@components/Me';
 import {useTranslation} from 'react-i18next';
+import {CustomIcon} from '@assets/icons';
+import {goBack} from 'navigation/NavigationServices';
+import {useTheme} from '@theme';
 
 const Settings = () => {
   const {t} = useTranslation();
+  const {Colors} = useTheme();
   return (
     <SafeAreaView>
-      <HeaderTitle title="Cài đặt" />
+      <HeaderTitle
+        headerLeft={
+          <Block row align="center" justify="center">
+            <Block padding={{right: 10}}>
+              <TouchableOpacity onPress={() => goBack()}>
+                <CustomIcon
+                  name="chevron-left"
+                  size={20}
+                  color={Colors.orangeJuice}
+                />
+              </TouchableOpacity>
+            </Block>
+            <Text size={20}>{t('Cài đặt')}</Text>
+          </Block>
+        }
+      />
       <Block height={20} />
       <Text size={11}>{t('CÀI ĐẶT TÀI KHOẢN')}</Text>
       <Block backgroundColor="white">

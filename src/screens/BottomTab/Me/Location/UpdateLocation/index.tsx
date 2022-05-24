@@ -1,13 +1,12 @@
 import {SafeAreaView, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {Block, Button, HeaderTitle, Text} from '@components';
-import {useTranslation} from 'react-i18next';
-import {goBack, navigate} from 'navigation/NavigationServices';
-import {MenuUpdateProfile} from '@components/Me';
+import {Block, HeaderTitle, Text} from '@components';
 import {CustomIcon} from '@assets/icons';
+import {goBack} from 'navigation/NavigationServices';
 import {useTheme} from '@theme';
+import {useTranslation} from 'react-i18next';
 
-const UpdatePhone = () => {
+const UpdateLocation = () => {
   const {t} = useTranslation();
   const {Colors} = useTheme();
   return (
@@ -24,23 +23,12 @@ const UpdatePhone = () => {
                 />
               </TouchableOpacity>
             </Block>
-            <Text size={20}>{t('Số điện thoại')}</Text>
+            <Text size={20}>{t('Sửa địa chỉ')}</Text>
           </Block>
         }
       />
-      <Block height={10} />
-      <MenuUpdateProfile
-        title={t('Số điện thoại')}
-        titleEnd={t('*******803')}
-      />
-      <Block padding={10}>
-        <Button
-          title={t('Cập nhật số điện thoại')}
-          onPress={() => navigate('')}
-        />
-      </Block>
     </SafeAreaView>
   );
 };
 
-export default UpdatePhone;
+export default UpdateLocation;
