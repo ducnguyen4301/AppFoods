@@ -1,8 +1,9 @@
 import {Block} from '@components';
+import Helper from '@utils/helpers';
 import {getSize} from '@utils/reponsive';
 import banners from 'data/banner';
 import React, {useCallback, useMemo} from 'react';
-import {FlatList, Image, TouchableOpacity, Linking} from 'react-native';
+import {FlatList, Image, TouchableOpacity} from 'react-native';
 import Loading from './Loading';
 import styles from './styles';
 
@@ -17,7 +18,7 @@ const Banner: React.FC<BannerProps> = () => {
   const _renderSlide = useCallback(({item}: any) => {
     return (
       <TouchableOpacity
-        onPress={() => Linking.openURL('https://reactnative.dev/')}
+        onPress={() => Helper.openLink('https://reactnative.dev/')}
         activeOpacity={0.8}
         style={styles.slideItem}>
         <Image

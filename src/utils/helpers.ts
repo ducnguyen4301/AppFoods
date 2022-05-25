@@ -75,8 +75,8 @@ const Helper = {
         await InAppBrowser.open(url, {
           // iOS Properties
           dismissButtonStyle: 'cancel',
-          preferredBarTintColor: Colors.tealBlue,
-          preferredControlTintColor: 'white',
+          preferredBarTintColor: Colors.white,
+          preferredControlTintColor: 'black',
           modalEnabled: true,
           modalPresentationStyle: 'automatic',
           animated: true,
@@ -85,7 +85,7 @@ const Helper = {
           // Android Properties
           showTitle: true,
           toolbarColor: Colors.primary,
-          secondaryToolbarColor: Colors.tealBlue,
+          secondaryToolbarColor: Colors.primaryText,
           enableUrlBarHiding: true,
           enableDefaultShare: true,
           forceCloseOnRedirection: false,

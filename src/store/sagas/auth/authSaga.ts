@@ -40,13 +40,12 @@ function* handleGetCurrentUser() {
   yield put(getCurrentUserSuccess(data));
 }
 
-const safeConfigs = (title: string, action: PayloadAction) => ({
+const safeConfigs = (message: string, action: PayloadAction) => ({
   customError: function* () {
     yield put(action);
   },
-  alert: {title},
+  alert: {message},
 });
-
 export default [
   takeLatest(
     login.type,
