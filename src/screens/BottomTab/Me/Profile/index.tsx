@@ -34,13 +34,9 @@ const ProfileScreen = () => {
       <MenuProfile
         onPress={() => navigate('UpdateImage')}
         titleEnd="Đổi hình đại diện"
-        type={'image'}
+        isShowImage
       />
-      <MenuProfile
-        title="Tên đăng nhập"
-        titleEnd="foodee_1fmkfm3"
-        type="username"
-      />
+      <MenuProfile title="Tên đăng nhập" titleEnd="foodee_1fmkfm3" isArrow />
       <MenuProfile
         onPress={() => navigate('UpdatePhone')}
         title="Số điện thoại"
@@ -56,25 +52,25 @@ const ProfileScreen = () => {
         onPress={() => navigate('UpdateEmail')}
         title="Email"
         titleEnd="Nhập Email"
-        type="email"
+        isEmail
       />
       <MenuProfile
         onPress={() => navigate('')}
         title="Giới tính"
         titleEnd="Cập nhật ngay"
-        type="gender"
+        isGender
       />
       <MenuProfile
         onPress={() => navigate('')}
         title="Ngày sinh"
         titleEnd="Cập nhật ngay"
-        type="dob"
+        isDOB
       />
       <MenuProfile
         onPress={() => navigate('UpdateJob')}
         title="Nghề nghiệp"
         titleEnd="Cập nhật ngay"
-        type="job"
+        isJob
       />
     </Block>
   );

@@ -11,7 +11,13 @@ interface UserProps {
   info?: AuthResponse;
   title?: string;
   titleEnd?: String;
-  type?: 'image' | 'gender' | 'email' | 'dob' | 'job' | 'username';
+  isShowImage?: boolean;
+  isArrow?: boolean;
+  isGender?: boolean;
+  isEmail?: boolean;
+  isDOB?: boolean;
+  isJob?: boolean;
+  type?: 'gender' | 'email' | 'dob' | 'job';
   onPress?: () => void;
 }
 
@@ -19,6 +25,12 @@ const images = localImages();
 const MenuProfile: React.FC<UserProps> = ({
   info,
   title,
+  isShowImage,
+  isArrow,
+  isGender,
+  isEmail,
+  isDOB,
+  isJob,
   titleEnd,
   type,
   onPress,
@@ -30,7 +42,7 @@ const MenuProfile: React.FC<UserProps> = ({
       border={{bottom: {width: 0.8, color: Colors.whiteSmoke}}}>
       <TouchableOpacity activeOpacity={0.5} {...{onPress}}>
         <Block align="center" row padding={{horizontal: 16, vertical: 12}}>
-          {type === 'image' ? (
+          {isShowImage ? (
             <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
               <Image
                 source={
@@ -48,18 +60,15 @@ const MenuProfile: React.FC<UserProps> = ({
 
           <Block flex row justify="flex-end">
             <Block align="center" justify="center">
-              {type === 'image' ? (
+              {isShowImage ? (
                 <Text color={Colors.orangeJuice}>{titleEnd}</Text>
-              ) : type === 'email' ||
-                type === 'gender' ||
-                type === 'dob' ||
-                type === 'job' ? (
+              ) : isEmail || isGender || isDOB || isJob ? (
                 <Text color={Colors.veryLightPink}>{titleEnd}</Text>
               ) : (
                 <Text>{titleEnd}</Text>
               )}
             </Block>
-            {type === 'username' ? (
+            {isArrow ? (
               <Block square={25} align="center" justify="center" />
             ) : (
               <Block square={25} align="center" justify="center">
