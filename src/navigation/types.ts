@@ -15,6 +15,10 @@ export type BottomTabRoutes = {
   Me: undefined;
 };
 
+export type DevStackRoutes = {
+  DevMenu: undefined;
+};
+
 export type RouteNames = keyof RootStackRoutes;
 
 export type ScreenOptions<T extends ParamListBase, K extends {}> = {

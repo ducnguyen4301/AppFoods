@@ -6,4 +6,6 @@ export {default as Button} from './base/Button';
 export {default as IconComponent} from './base/Icon';
 export {default as Shimmer} from './base/Shimmer';
 export {default as HeaderTitle} from './base/HeaderTitle';
+export {default as Image} from './base/Image';
+export {default as Switch} from './base/Switch';
 export * from './base/Form';

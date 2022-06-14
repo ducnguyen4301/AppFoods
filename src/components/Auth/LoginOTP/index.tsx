@@ -33,25 +33,27 @@ const LoginOTP = ({onSubmit}: LoginPhoneProps) => {
         name="phone"
         placeholder="Số điện thoại"
         placeholderTextColor={Colors.secondaryText}
+        leftIcon={{type: 'feather', name: 'phone'}}
         inputStyle={styles.inputStyle}
         error
         errorStyle={styles.error}
         keyboardType={'numeric'}
       />
-      <Block margin={{top: 16}} alignSelf="flex-end">
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigate('LoginScreen')}>
-          <Text color={Colors.primary}>{t('Đăng nhập bằng Mật Khẩu')}</Text>
-        </TouchableOpacity>
-      </Block>
-      <Block height={34} />
+
+      <Block height={20} />
       <Button
         title="Tiếp tục"
         onPress={handleSubmit(onSubmit as any)}
         disabledBackground={Colors.secondaryText}
         disabled={!isValid}
       />
+      <Block margin={{top: 18}} alignSelf="flex-end">
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => navigate('LoginScreen')}>
+          <Text color={Colors.primary}>{t('Đăng nhập bằng Mật Khẩu')}</Text>
+        </TouchableOpacity>
+      </Block>
     </Block>
   );
 };

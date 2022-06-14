@@ -1,18 +1,18 @@
-import {Block, Text, IconComponent, FormContainer} from '@components';
+import {Block, Text, FormContainer, HeaderTitle, Image} from '@components';
 import {useTheme} from '@theme';
-import {getSize} from '@utils/reponsive';
 import React from 'react';
-import {TouchableOpacity, Image} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {TouchableOpacity, SafeAreaView} from 'react-native';
 import {LoginForm} from '@components/Auth';
 import {useDispatch} from 'react-redux';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {login} from '@store/sagas/auth/slice';
 import localImages from '@assets';
+import {CustomIcon} from '@assets/icons';
+import {useTranslation} from 'react-i18next';
 const LoginScreen = () => {
-  const {top} = useSafeAreaInsets();
   const navigation = useNavigation();
+  const {t} = useTranslation();
   const {Colors} = useTheme();
   const dispatch = useDispatch();
   const _loginAccount = (values: {email: string; password: string}) => {
@@ -20,14 +20,30 @@ const LoginScreen = () => {
   };
 
   return (
-    <Block style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <HeaderTitle
+        headerLeft={
+          <Block row align="center" justify="center">
+            <Block padding={{right: 10}}>
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <CustomIcon
+                  name="chevron-left"
+                  size={20}
+                  color={Colors.orangeJuice}
+                />
+              </TouchableOpacity>
+            </Block>
+            <Text size={20}>{t('Đăng nhập hoặc đăng ký')}</Text>
+          </Block>
+        }
+      />
       <FormContainer>
-        <Block flexGrow style={{paddingTop: top}}>
-          <Block margin={{vertical: 26, top: 84}} align="center">
-            <Image source={localImages().logo} />
+        <Block>
+          <Block margin={{vertical: 25, top: 30}} align="center">
+            <Image source={localImages().logo} width={60} height={60} />
           </Block>
           <LoginForm onSubmit={_loginAccount} />
-          <Block align="center" row margin={{top: 50}} justify="center">
+          <Block align="center" row margin={{top: 25}} justify="center">
             <Text color="secondaryText" style={styles.orText}>
               ----------------------
             </Text>
@@ -50,17 +66,7 @@ const LoginScreen = () => {
           </Block>
         </Block>
       </FormContainer>
-      <TouchableOpacity
-        style={[styles.closeBtn, {top}]}
-        onPress={() => navigation.goBack()}>
-        <IconComponent
-          name="chevron-left"
-          type="custom"
-          color={Colors.orange}
-          size={getSize.s(20)}
-        />
-      </TouchableOpacity>
-    </Block>
+    </SafeAreaView>
   );
 };
 

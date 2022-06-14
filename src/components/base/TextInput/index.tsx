@@ -32,7 +32,7 @@ const TextInput = forwardRef<any, InputProps>((props, ref) => {
     inputContainerStyle,
     style,
     fontType = 'regular',
-    size = 14,
+    size = 15,
     disabled,
     disabledInputStyle,
     leftIcon,

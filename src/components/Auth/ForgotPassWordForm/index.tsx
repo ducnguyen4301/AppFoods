@@ -29,6 +29,7 @@ const RecoveryForm = ({onSubmit}: RecoveryFormProps) => {
         placeholder="Nhập địa chỉ email"
         placeholderTextColor={Colors.white70}
         inputStyle={styles.inputStyle}
+        leftIcon={{type: 'fontAwesome', name: 'user-o'}}
       />
       <Block height={34} />
       <Button

@@ -22,7 +22,7 @@ const Notifications = () => {
           color: 'primaryText',
           size: 22,
         }}
-        onHeaderRightPress={() => navigate('Me')}
+        onHeaderRightPress={() => navigate('Settings')}
       />
       <MenuItem
         title={t('Khuyến mãi')}

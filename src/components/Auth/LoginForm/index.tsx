@@ -35,8 +35,9 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
         inputStyle={styles.inputStyle}
         error
         errorStyle={styles.error}
+        leftIcon={{type: 'fontAwesome', name: 'user-o'}}
       />
-      <Block height={25} />
+      <Block height={20} />
       <FormInput
         control={control}
         name="password"
@@ -45,21 +46,22 @@ const LoginForm = ({onSubmit}: LoginFormProps) => {
         inputStyle={styles.inputStyle}
         secureTextEntry
         onSubmitEditing={handleSubmit(onSubmit as any)}
+        leftIcon={{type: 'octicons', name: 'lock'}}
       />
-      <Block margin={{top: 16}} alignSelf="flex-end">
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigate('LoginPhone')}>
-          <Text color="#1877f2">{t('Đăng nhập bằng SMS')}</Text>
-        </TouchableOpacity>
-      </Block>
-      <Block height={34} />
+      <Block height={20} />
       <Button
         title="Đăng nhập"
         onPress={handleSubmit(onSubmit as any)}
         disabledBackground={Colors.secondaryText}
         disabled={!isValid}
       />
+      <Block margin={{top: 18}} alignSelf="flex-end">
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => navigate('LoginPhone')}>
+          <Text color="#1877f2">{t('Đăng nhập bằng SMS')}</Text>
+        </TouchableOpacity>
+      </Block>
     </Block>
   );
 };
