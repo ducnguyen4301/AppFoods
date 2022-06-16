@@ -43,7 +43,7 @@ const LoginOTP = ({onSubmit}: LoginPhoneProps) => {
       <Block height={20} />
       <Button
         title="Tiếp tục"
-        onPress={handleSubmit(onSubmit as any)}
+        onPress={handleSubmit(() => navigate('OTPScreen', {onSubmit}))}
         disabledBackground={Colors.secondaryText}
         disabled={!isValid}
       />

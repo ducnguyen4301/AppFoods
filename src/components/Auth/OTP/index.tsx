@@ -6,14 +6,13 @@ import styles from './styles';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const inputs = Array(6).fill('');
-const arrOTP = Array(6).fill('');
 let newInputdex = 0;
 
 const OTPFields = () => {
   const inputRef = useRef<any>(null);
   const {t} = useTranslation();
-  const [OTP, setOTP] = useState(arrOTP);
-  const [nextInputdex, setNextInputdex] = useState(0);
+  const [OTP, setOTP] = useState<string[]>(Array(6).fill(''));
+  const [nextInputdex, setNextInputdex] = useState<number>(0);
   const handleChangeText = (text: string, _index: number) => {
     const newOTP = {...OTP};
     newOTP[_index] = text;
